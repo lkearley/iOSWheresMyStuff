@@ -1,19 +1,18 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'iOSwheresMyStuff' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+
   use_frameworks!
-
+target 'iOSwheresMyStuff' do
   # Pods for iOSwheresMyStuff
-
-  target 'iOSwheresMyStuffTests' do
     pod 'Firebase/Core'
     pod 'Firebase/Database'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+
+end
+
+target 'iOSwheresMyStuffTests' do
     inherit! :search_paths
     # Pods for testing
-  end
-
 end
