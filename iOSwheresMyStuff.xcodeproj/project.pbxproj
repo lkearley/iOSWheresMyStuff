@@ -13,6 +13,15 @@
 		A67C161E1F1072CB00A6B984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67C161D1F1072CB00A6B984 /* Assets.xcassets */; };
 		A67C16211F1072CB00A6B984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161F1F1072CB00A6B984 /* LaunchScreen.storyboard */; };
 		A67C162C1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C162B1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift */; };
+		A67C16371F1072F500A6B984 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16361F1072F500A6B984 /* Admin.swift */; };
+		A67C16391F10730F00A6B984 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16381F10730F00A6B984 /* User.swift */; };
+		A67C163B1F10733500A6B984 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C163A1F10733500A6B984 /* Item.swift */; };
+		A67C163D1F10735100A6B984 /* FoundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C163C1F10735100A6B984 /* FoundItem.swift */; };
+		A67C163F1F10736700A6B984 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C163E1F10736700A6B984 /* ItemCategory.swift */; };
+		A67C16411F10737D00A6B984 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16401F10737D00A6B984 /* ItemManager.swift */; };
+		A67C16431F10739500A6B984 /* LostItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16421F10739500A6B984 /* LostItem.swift */; };
+		A67C16451F1073BA00A6B984 /* DonatedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16441F1073BA00A6B984 /* DonatedItem.swift */; };
+		A67C16471F1073D300A6B984 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16461F1073D300A6B984 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +45,15 @@
 		A67C16271F1072CC00A6B984 /* iOSwheresMyStuffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSwheresMyStuffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67C162B1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSwheresMyStuffTests.swift; sourceTree = "<group>"; };
 		A67C162D1F1072CC00A6B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67C16361F1072F500A6B984 /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		A67C16381F10730F00A6B984 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A67C163A1F10733500A6B984 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A67C163C1F10735100A6B984 /* FoundItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundItem.swift; sourceTree = "<group>"; };
+		A67C163E1F10736700A6B984 /* ItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		A67C16401F10737D00A6B984 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
+		A67C16421F10739500A6B984 /* LostItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LostItem.swift; sourceTree = "<group>"; };
+		A67C16441F1073BA00A6B984 /* DonatedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonatedItem.swift; sourceTree = "<group>"; };
+		A67C16461F1073D300A6B984 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,15 @@
 				A67C16161F1072CB00A6B984 /* AppDelegate.swift */,
 				A67C16181F1072CB00A6B984 /* ViewController.swift */,
 				A67C161A1F1072CB00A6B984 /* Main.storyboard */,
+				A67C16361F1072F500A6B984 /* Admin.swift */,
+				A67C16381F10730F00A6B984 /* User.swift */,
+				A67C163A1F10733500A6B984 /* Item.swift */,
+				A67C163C1F10735100A6B984 /* FoundItem.swift */,
+				A67C163E1F10736700A6B984 /* ItemCategory.swift */,
+				A67C16401F10737D00A6B984 /* ItemManager.swift */,
+				A67C16421F10739500A6B984 /* LostItem.swift */,
+				A67C16441F1073BA00A6B984 /* DonatedItem.swift */,
+				A67C16461F1073D300A6B984 /* Model.swift */,
 				A67C161D1F1072CB00A6B984 /* Assets.xcassets */,
 				A67C161F1F1072CB00A6B984 /* LaunchScreen.storyboard */,
 				A67C16221F1072CB00A6B984 /* Info.plist */,
@@ -199,8 +226,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67C163B1F10733500A6B984 /* Item.swift in Sources */,
+				A67C163F1F10736700A6B984 /* ItemCategory.swift in Sources */,
+				A67C16391F10730F00A6B984 /* User.swift in Sources */,
 				A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */,
+				A67C16451F1073BA00A6B984 /* DonatedItem.swift in Sources */,
+				A67C16431F10739500A6B984 /* LostItem.swift in Sources */,
+				A67C16371F1072F500A6B984 /* Admin.swift in Sources */,
 				A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */,
+				A67C16471F1073D300A6B984 /* Model.swift in Sources */,
+				A67C16411F10737D00A6B984 /* ItemManager.swift in Sources */,
+				A67C163D1F10735100A6B984 /* FoundItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
