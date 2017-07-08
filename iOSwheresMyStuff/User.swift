@@ -10,16 +10,14 @@ import Foundation
 import UIKit
 
 class User {
-    var id: String!
     var password: String!
     var email: String!
     var isLocked: Bool!
     
-    init?(id: String, password: String, email: String) {
-        guard !id.isEmpty && !password.isEmpty && !email.isEmpty else {
+    init?(password: String, email: String) {
+        guard !password.isEmpty && !email.isEmpty else {
             return nil
         }
-        self.id = id
         self.password = password
         self.email = email
         self.isLocked = false

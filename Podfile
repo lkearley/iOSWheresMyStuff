@@ -9,6 +9,7 @@ target 'iOSwheresMyStuff' do
     pod 'Firebase/Database'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    pod 'Firebase/Auth'
 
 end
 
