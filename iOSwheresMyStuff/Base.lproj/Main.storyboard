@@ -75,10 +75,8 @@
                     <tabBarItem key="tabBarItem" title="Login" id="GDM-PN-sMc"/>
                     <navigationItem key="navigationItem" title="Login" id="dfh-Sv-tEz"/>
                     <connections>
-                        <outlet property="loginButton" destination="noU-qf-iNZ" id="lzA-aw-vME"/>
                         <outlet property="passwordLabel" destination="dFa-Bn-kBB" id="WEp-43-cM3"/>
                         <outlet property="passwordTextField" destination="Yig-BQ-5Gu" id="YgF-Yk-VEA"/>
-                        <outlet property="registerButton" destination="92K-O9-O3h" id="hkT-mO-gbJ"/>
                         <outlet property="usernameLabel" destination="ibL-sq-iFe" id="mDk-5p-HKf"/>
                         <outlet property="usernameTextField" destination="QUW-20-M2C" id="pnd-WN-p1k"/>
                     </connections>
@@ -261,7 +259,7 @@
         <scene sceneID="wll-NQ-5Et">
             <objects>
                 <navigationController definesPresentationContext="YES" id="NmT-tD-JFV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="guW-KF-WZJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="guW-KF-WZJ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
