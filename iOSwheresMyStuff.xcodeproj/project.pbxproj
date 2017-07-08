@@ -10,6 +10,8 @@
 		1B46D7AB52F08E7EBE28A4FE /* Pods_iOSwheresMyStuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30127844B899F694D1B4594A /* Pods_iOSwheresMyStuff.framework */; };
 		991A552FF260BB29B55EEEA4 /* Pods_iOSwheresMyStuffTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B255B11AB72B21011A644AC7 /* Pods_iOSwheresMyStuffTests.framework */; };
 		A602D08F1F114E5200CCB6F1 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D08E1F114E5200CCB6F1 /* UserManager.swift */; };
+		A602D0911F11563000CCB6F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D0901F11563000CCB6F1 /* DashboardViewController.swift */; };
+		A602D0931F115AEE00CCB6F1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D0921F115AEE00CCB6F1 /* RegistrationViewController.swift */; };
 		A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16161F1072CB00A6B984 /* AppDelegate.swift */; };
 		A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16181F1072CB00A6B984 /* ViewController.swift */; };
 		A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161A1F1072CB00A6B984 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		30127844B899F694D1B4594A /* Pods_iOSwheresMyStuff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSwheresMyStuff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCC4C7433360BD2E8923E03 /* Pods-iOSwheresMyStuffTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSwheresMyStuffTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSwheresMyStuffTests/Pods-iOSwheresMyStuffTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A602D08E1F114E5200CCB6F1 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		A602D0901F11563000CCB6F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		A602D0921F115AEE00CCB6F1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A67C16131F1072CB00A6B984 /* iOSwheresMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSwheresMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67C16161F1072CB00A6B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67C16181F1072CB00A6B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 				A67C16161F1072CB00A6B984 /* AppDelegate.swift */,
 				A67C16181F1072CB00A6B984 /* ViewController.swift */,
 				A67C161A1F1072CB00A6B984 /* Main.storyboard */,
+				A602D0921F115AEE00CCB6F1 /* RegistrationViewController.swift */,
+				A602D0901F11563000CCB6F1 /* DashboardViewController.swift */,
 				A67C164A1F10842200A6B984 /* DatabaseManager.swift */,
 				A67C16481F10816300A6B984 /* LoginViewController.swift */,
 				A602D08E1F114E5200CCB6F1 /* UserManager.swift */,
@@ -379,8 +385,10 @@
 				A67C163F1F10736700A6B984 /* ItemCategory.swift in Sources */,
 				A67C16391F10730F00A6B984 /* User.swift in Sources */,
 				A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */,
+				A602D0911F11563000CCB6F1 /* DashboardViewController.swift in Sources */,
 				A67C16451F1073BA00A6B984 /* DonatedItem.swift in Sources */,
 				A67C16431F10739500A6B984 /* LostItem.swift in Sources */,
+				A602D0931F115AEE00CCB6F1 /* RegistrationViewController.swift in Sources */,
 				A67C16371F1072F500A6B984 /* Admin.swift in Sources */,
 				A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */,
 				A67C16471F1073D300A6B984 /* Model.swift in Sources */,

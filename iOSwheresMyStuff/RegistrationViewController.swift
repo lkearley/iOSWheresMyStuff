@@ -1,8 +1,8 @@
 //
-//  LoginViewController.swift
+//  RegistrationViewController.swift
 //  iOSwheresMyStuff
 //
-//  Created by Lauren Kearley on 7/7/17.
+//  Created by Lauren Kearley on 7/8/17.
 //  Copyright © 2017 Lauren Kearley. All rights reserved.
 //
 
@@ -10,18 +10,19 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class RegistrationViewController: UIViewController {
 
-    //MARK: Properties
-    @IBOutlet weak var usernameLabel: UILabel!
+    //MARK:
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.delegate = self
-        passwordTextField.delegate = self
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +31,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Actions
-    
-    @IBAction func attemptLogin(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+    @IBAction func registrationButtonPressed(_ sender: UIButton) {
+        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let error = error {
                 let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -40,16 +40,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Dashboard")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
             self.present(vc!, animated: true, completion: nil)
         }
     }
     
-    @IBAction func goToRegistration(_ sender: UIButton) {
-    }
     
     
-
     /*
     // MARK: - Navigation
 

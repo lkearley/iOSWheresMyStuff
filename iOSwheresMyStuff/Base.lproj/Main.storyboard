@@ -55,9 +55,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="attemptLogin:" destination="Icm-pK-nib" eventType="touchUpInside" id="VH1-K3-zsc"/>
-                                    <segue destination="Kof-63-xQq" kind="show" id="zCo-Kc-5Dx">
-                                        <nil key="action"/>
-                                    </segue>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92K-O9-O3h">
@@ -66,11 +63,12 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="goToRegistration:" destination="Icm-pK-nib" eventType="touchUpInside" id="Kvg-Tn-Ppc"/>
-                                    <segue destination="hfE-iA-4Ge" kind="show" id="aBc-Jz-dwo"/>
+                                    <segue destination="hfE-iA-4Ge" kind="show" id="JZ6-oP-IL4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Login"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Login" id="GDM-PN-sMc"/>
                     <navigationItem key="navigationItem" title="Login" id="dfh-Sv-tEz"/>
@@ -85,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="352.80000000000001" y="94.902548725637189"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="fag-Vg-7Cm">
             <objects>
-                <viewController id="hfE-iA-4Ge" sceneMemberID="viewController">
+                <viewController id="hfE-iA-4Ge" customClass="RegistrationViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TwO-Ti-RlK"/>
                         <viewControllerLayoutGuide type="bottom" id="PaQ-Vz-RD6"/>
@@ -130,23 +128,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="Kof-63-xQq" kind="show" id="gNl-l5-Dr3">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <action selector="registrationButtonPressed:" destination="hfE-iA-4Ge" eventType="touchUpInside" id="bwL-Qf-r1T"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Registration"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="3if-kH-tuP" id="dRm-bt-YdD"/>
+                        <outlet property="emailTextField" destination="hlw-Jp-Nwz" id="pIf-rc-Wfj"/>
+                        <outlet property="passwordLabel" destination="DKo-hs-PBT" id="UQu-5O-ds7"/>
+                        <outlet property="passwordTextField" destination="Zbd-4O-nju" id="kTY-s7-QmZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6r3-GQ-jkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1434" y="519"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="yr1-bU-VRO">
             <objects>
-                <viewController id="Kof-63-xQq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kof-63-xQq" customClass="DashboardViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RqT-JH-2XY"/>
                         <viewControllerLayoutGuide type="bottom" id="lIO-Ky-b9b"/>
@@ -181,6 +184,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Dashboard"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHI-zZ-hRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,7 +262,4 @@
             <point key="canvasLocation" x="-726" y="95"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gNl-l5-Dr3"/>
-    </inferredMetricsTieBreakers>
 </document>
