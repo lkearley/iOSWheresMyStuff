@@ -13,6 +13,7 @@
 		A602D0911F11563000CCB6F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D0901F11563000CCB6F1 /* DashboardViewController.swift */; };
 		A602D0931F115AEE00CCB6F1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D0921F115AEE00CCB6F1 /* RegistrationViewController.swift */; };
 		A602D0971F16B85500CCB6F1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D0961F16B85500CCB6F1 /* MapViewController.swift */; };
+		A602D0991F16B93800CCB6F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A602D0981F16B93800CCB6F1 /* GoogleService-Info.plist */; };
 		A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16161F1072CB00A6B984 /* AppDelegate.swift */; };
 		A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16181F1072CB00A6B984 /* ViewController.swift */; };
 		A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161A1F1072CB00A6B984 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		A602D0901F11563000CCB6F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A602D0921F115AEE00CCB6F1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A602D0961F16B85500CCB6F1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A602D0981F16B93800CCB6F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A67C16131F1072CB00A6B984 /* iOSwheresMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSwheresMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67C16161F1072CB00A6B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67C16181F1072CB00A6B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		A67C16151F1072CB00A6B984 /* iOSwheresMyStuff */ = {
 			isa = PBXGroup;
 			children = (
+				A602D0981F16B93800CCB6F1 /* GoogleService-Info.plist */,
 				A67C16161F1072CB00A6B984 /* AppDelegate.swift */,
 				A67C16181F1072CB00A6B984 /* ViewController.swift */,
 				A67C161A1F1072CB00A6B984 /* Main.storyboard */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67C16211F1072CB00A6B984 /* LaunchScreen.storyboard in Resources */,
+				A602D0991F16B93800CCB6F1 /* GoogleService-Info.plist in Resources */,
 				A67C161E1F1072CB00A6B984 /* Assets.xcassets in Resources */,
 				A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */,
 			);
