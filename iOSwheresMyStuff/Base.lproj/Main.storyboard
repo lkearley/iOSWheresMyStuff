@@ -334,10 +334,10 @@
             </objects>
             <point key="canvasLocation" x="3617" y="-206"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="KOo-FG-eOf">
             <objects>
-                <viewController id="Rs6-Ca-Bf9" sceneMemberID="viewController">
+                <viewController id="Rs6-Ca-Bf9" customClass="MapViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fv1-TH-89S"/>
                         <viewControllerLayoutGuide type="bottom" id="5hP-HW-CGv"/>
@@ -345,12 +345,6 @@
                     <view key="view" contentMode="scaleToFill" id="I5X-ku-wGP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bmR-7t-hla">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
