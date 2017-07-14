@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import Firebase
+import Firebase
 
 class DatabaseManager {
     static let sharedDatabaseManager = DatabaseManager()

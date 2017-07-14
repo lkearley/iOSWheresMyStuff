@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class RegistrationViewController: UIViewController {
 
-    //MARK:
+    //MARK: Properties
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!

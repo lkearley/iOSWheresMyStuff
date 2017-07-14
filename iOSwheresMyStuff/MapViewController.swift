@@ -11,6 +11,8 @@ import GooglePlaces
 import GoogleMaps
 
 class MapViewController: UIViewController {
+    //MARK: Properties
+    @IBOutlet var mapViewRegion: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
