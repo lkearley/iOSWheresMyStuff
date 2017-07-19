@@ -166,7 +166,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08N-3P-JGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3386" y="-1217"/>
+            <point key="canvasLocation" x="3295" y="-1218"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="yr1-bU-VRO">
@@ -216,11 +216,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" identifier="Dashboard"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="w22-si-0En"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="Home" id="w22-si-0En"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHI-zZ-hRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4111" y="-163"/>
+            <point key="canvasLocation" x="4110" y="-163"/>
         </scene>
         <!--Lost Item List-->
         <scene sceneID="ZFY-AU-A0S">
@@ -245,7 +245,7 @@
                             <outlet property="delegate" destination="BqR-Dc-kd6" id="6ur-tE-viB"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Lost Item List" id="4Gc-6r-hBw"/>
+                    <tabBarItem key="tabBarItem" title="Lost Item List" image="LostItemsList" selectedImage="LostItemsList" id="4Gc-6r-hBw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lee-Ll-DQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,7 +356,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Item" id="C6d-Rv-JCb"/>
+                    <tabBarItem key="tabBarItem" title="Add Item" image="AddItem" selectedImage="AddItem" id="C6d-Rv-JCb"/>
                     <connections>
                         <outlet property="dateFoundLabel" destination="Go2-zd-wav" id="aYj-a2-Xag"/>
                         <outlet property="descriptionItemLabel" destination="kYE-qV-oeY" id="LXD-cY-f05"/>
@@ -372,7 +372,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qP0-SJ-cWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5470" y="-1216"/>
+            <point key="canvasLocation" x="5470" y="-1218"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CsV-K1-jxh">
+            <objects>
+                <viewController id="h0n-g5-CF8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xuu-Ro-3fv"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZDS-Zz-bcT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1ji-3j-MO4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3P-WX-9LC">
+                                <rect key="frame" x="148" y="228" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Found Item"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2a-bt-Jk1">
+                                <rect key="frame" x="145" y="304" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Donate Item"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgY-GO-JyH">
+                                <rect key="frame" x="155" y="146" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lost Item"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ko-fw-hbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6495" y="-1218"/>
         </scene>
         <!--Found Items List-->
         <scene sceneID="BZI-qJ-cZY">
@@ -397,7 +432,7 @@
                             <outlet property="delegate" destination="uT6-fD-uR0" id="trB-st-HUz"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Found Items List" id="9bJ-UC-hbD"/>
+                    <tabBarItem key="tabBarItem" title="Found Items List" image="FoundItemsList" selectedImage="FoundItemsList" id="9bJ-UC-hbD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChZ-QK-ewF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -441,7 +476,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="ofd-zl-tA2"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="ofd-zl-tA2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBz-iE-AUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +485,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8XY-PE-x48">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BVB-UK-xDV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" id="BVB-UK-xDV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4N-ll-hK3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -466,11 +501,18 @@
             <point key="canvasLocation" x="-130.40000000000001" y="-163.26836581709148"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddItem" width="25" height="25"/>
+        <image name="FoundItemsList" width="25" height="25"/>
+        <image name="Home" width="24" height="24"/>
+        <image name="LostItemsList" width="25" height="25"/>
+        <image name="MapIcon" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="plN-cN-yW7"/>
         <segue reference="wjR-Q7-IZB"/>
-        <segue reference="xQD-kF-WMb"/>
         <segue reference="iH4-g6-ufN"/>
         <segue reference="CVp-rQ-74g"/>
+        <segue reference="z6c-Lp-mqp"/>
     </inferredMetricsTieBreakers>
 </document>
