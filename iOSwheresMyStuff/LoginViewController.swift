@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FacebookLogin
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -17,11 +18,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var facebookLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        let facebookLoginButton = FBSDKLoginButton()
+        facebookLoginButton.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

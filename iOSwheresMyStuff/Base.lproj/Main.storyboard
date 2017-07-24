@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BVB-UK-xDV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BVB-UK-xDV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -66,6 +66,11 @@
                                     <segue destination="hfE-iA-4Ge" kind="show" id="JZ6-oP-IL4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfO-2X-cj8">
+                                <rect key="frame" x="115" y="325" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login With Facebook"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" identifier="Login"/>
@@ -73,6 +78,7 @@
                     <navigationItem key="navigationItem" id="fB2-ac-Low"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="facebookLoginButton" destination="tfO-2X-cj8" id="l9l-xV-jMb"/>
                         <outlet property="passwordLabel" destination="dFa-Bn-kBB" id="WEp-43-cM3"/>
                         <outlet property="passwordTextField" destination="Yig-BQ-5Gu" id="YgF-Yk-VEA"/>
                         <outlet property="usernameLabel" destination="ibL-sq-iFe" id="mDk-5p-HKf"/>
@@ -363,6 +369,7 @@
                         <outlet property="descriptionItemTextField" destination="TCb-co-9rg" id="Ar8-0E-FUN"/>
                         <outlet property="itemNameLabel" destination="9xn-ow-ocF" id="uil-BA-1wA"/>
                         <outlet property="itemNameTextField" destination="IiH-is-D8S" id="5Gq-W0-4Wf"/>
+                        <outlet property="itemTypePicker" destination="prP-lB-leb" id="k4A-kw-aSY"/>
                         <outlet property="locationFoundLabel" destination="1fb-Vx-fnJ" id="ccZ-Wa-f0C"/>
                         <outlet property="locationTextField" destination="Edr-rd-ykq" id="hPX-WF-MS7"/>
                         <outlet property="lostDatePicker" destination="Hwa-GJ-8nF" id="8io-0G-tgG"/>
@@ -413,18 +420,23 @@
         <scene sceneID="BZI-qJ-cZY">
             <objects>
                 <tableViewController id="uT6-fD-uR0" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVx-FH-Vnm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVx-FH-Vnm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DNp-x6-9nc">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="DNp-x6-9nc">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DNp-x6-9nc" id="NsM-V4-VsW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="XKC-iR-6y4" appends="YES" id="3h2-aQ-CBl"/>
+                                    <outletCollection property="gestureRecognizers" destination="XKC-iR-6y4" appends="YES" id="GLO-cX-zWN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -435,8 +447,9 @@
                     <tabBarItem key="tabBarItem" title="Found Items List" image="FoundItemsList" selectedImage="FoundItemsList" id="9bJ-UC-hbD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChZ-QK-ewF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="XKC-iR-6y4"/>
             </objects>
-            <point key="canvasLocation" x="5470" y="-163"/>
+            <point key="canvasLocation" x="5469.6000000000004" y="-163.26836581709148"/>
         </scene>
         <!--Map-->
         <scene sceneID="KOo-FG-eOf">
@@ -477,6 +490,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="ofd-zl-tA2"/>
+                    <connections>
+                        <outlet property="mapView" destination="JQL-Mr-YZs" id="xFp-eE-cqe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBz-iE-AUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -509,10 +525,10 @@
         <image name="MapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="plN-cN-yW7"/>
-        <segue reference="wjR-Q7-IZB"/>
-        <segue reference="iH4-g6-ufN"/>
-        <segue reference="CVp-rQ-74g"/>
         <segue reference="z6c-Lp-mqp"/>
+        <segue reference="iH4-g6-ufN"/>
+        <segue reference="wjR-Q7-IZB"/>
+        <segue reference="plN-cN-yW7"/>
+        <segue reference="CVp-rQ-74g"/>
     </inferredMetricsTieBreakers>
 </document>

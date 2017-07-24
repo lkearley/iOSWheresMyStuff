@@ -7,12 +7,15 @@
 //
 
 import UIKit
-import GoogleMaps
+import MapKit
+//import GoogleMaps
 import FirebaseDatabase
 
 class MapViewController: UIViewController {
+    
     //MARK: Properties
-    //@IBOutlet var mapViewRegion: UIView!
+     @IBOutlet weak var mapView: MKMapView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +29,7 @@ class MapViewController: UIViewController {
     }
     
     override func loadView() {
-        let camera = GMSCameraPosition.camera(withLatitude: 0.0, longitude: 0.0, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        view = mapView
+        
         
         // Creates a marker in the center of the map.
         //let marker = GMSMarker()
