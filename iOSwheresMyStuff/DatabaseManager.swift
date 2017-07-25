@@ -11,4 +11,5 @@ import Firebase
 
 class DatabaseManager {
     static let sharedDatabaseManager = DatabaseManager()
+    var ref: DatabaseReference! = Database.database().reference()
 }

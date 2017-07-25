@@ -14,19 +14,19 @@ class LostItem: Item {
     var description: String
     var isResolved: Bool
     //var category: ItemCategory
-    var location: String
+    //var location: String
     var reward: Int
     var date: Date
     
-    init?(name: String, description: String, isResolved: Bool, reward: Int, location: String, date: Date) {
-        guard !name.isEmpty && !description.isEmpty && !location.isEmpty else {
+    init?(name: String, description: String, isResolved: Bool, reward: Int, date: Date) {
+        guard !name.isEmpty && !description.isEmpty else {
             return nil
         }
         self.name = name
         self.description = description
         self.isResolved = false
         //self.category = category
-        self.location = location
+        //self.location = location
         self.reward = reward
         self.date = date
     }
