@@ -165,10 +165,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="Kof-63-xQq" kind="relationship" relationship="viewControllers" id="xQD-kF-WMb"/>
-                        <segue destination="Rs6-Ca-Bf9" kind="relationship" relationship="viewControllers" id="CVp-rQ-74g"/>
                         <segue destination="EgR-xj-1id" kind="relationship" relationship="viewControllers" id="iH4-g6-ufN"/>
                         <segue destination="BqR-Dc-kd6" kind="relationship" relationship="viewControllers" id="PlR-pX-6dP"/>
                         <segue destination="uT6-fD-uR0" kind="relationship" relationship="viewControllers" id="wjR-Q7-IZB"/>
+                        <segue destination="Rs6-Ca-Bf9" kind="relationship" relationship="viewControllers" id="rfb-0Q-TDL"/>
                         <segue destination="BqR-Dc-kd6" kind="relationship" relationship="viewControllers" id="plN-cN-yW7"/>
                     </connections>
                 </tabBarController>
@@ -209,7 +209,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Map"/>
                                 <connections>
-                                    <segue destination="Rs6-Ca-Bf9" kind="show" id="WF0-wE-pRj"/>
+                                    <segue destination="Rs6-Ca-Bf9" kind="show" id="Q1l-s9-J0u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4M-3f-U9J">
@@ -467,7 +467,7 @@
         <!--Map-->
         <scene sceneID="KOo-FG-eOf">
             <objects>
-                <viewController id="Rs6-Ca-Bf9" customClass="MapViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="Rs6-Ca-Bf9" customClass="MapViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fv1-TH-89S"/>
                         <viewControllerLayoutGuide type="bottom" id="5hP-HW-CGv"/>
@@ -476,47 +476,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dj-bN-waO">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohp-DB-uK7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3UE-st-9BK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JQL-Mr-YZs">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </mapView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="irC-Fi-AUo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="ofd-zl-tA2"/>
                     <connections>
-                        <outlet property="mapView" destination="JQL-Mr-YZs" id="xFp-eE-cqe"/>
+                        <outlet property="mainMap" destination="irC-Fi-AUo" id="r3c-oh-Kfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBz-iE-AUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2360.8000000000002" y="846.9265367316342"/>
+            <point key="canvasLocation" x="2866" y="-163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8XY-PE-x48">
             <objects>
                 <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" id="BVB-UK-xDV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g4N-ll-hK3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4N-ll-hK3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -538,10 +519,10 @@
         <image name="MapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CVp-rQ-74g"/>
-        <segue reference="plN-cN-yW7"/>
-        <segue reference="wjR-Q7-IZB"/>
-        <segue reference="iH4-g6-ufN"/>
-        <segue reference="z6c-Lp-mqp"/>
+        <segue reference="Q1l-s9-J0u"/>
+        <segue reference="xQD-kF-WMb"/>
+        <segue reference="bd4-ay-Cmh"/>
+        <segue reference="awQ-Cf-A2i"/>
+        <segue reference="YJT-86-6Gt"/>
     </inferredMetricsTieBreakers>
 </document>

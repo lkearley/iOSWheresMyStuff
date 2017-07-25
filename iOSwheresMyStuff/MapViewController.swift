@@ -8,36 +8,33 @@
 
 import UIKit
 import MapKit
-//import GoogleMaps
-import FirebaseDatabase
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    //MARK: Properties
-     @IBOutlet weak var mapView: MKMapView!
     
-
+    @IBOutlet weak var mainMap: MKMapView!
+    var manager:CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
-    override func loadView() {
-        
-        
-        // Creates a marker in the center of the map.
-        //let marker = GMSMarker()
-        //marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        //marker.title = "Sydney"
-        //marker.snippet = "Australia"
-        //marker.map = mapView
-    }
+    
 
     /*
     // MARK: - Navigation

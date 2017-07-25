@@ -37,7 +37,7 @@ class DashboardViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Navigation")
         self.present(vc!, animated: true, completion: nil)
         
     }
