@@ -11,6 +11,8 @@ import Firebase
 import FirebaseAuth
 
 class DashboardViewController: UIViewController {
+    //MARK: Properties
+    @IBOutlet weak var logoutButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,22 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Actions
+    @IBAction func logout(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            let alertController = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+        self.present(vc!, animated: true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation

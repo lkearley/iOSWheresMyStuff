@@ -62,8 +62,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="goToRegistration:" destination="Icm-pK-nib" eventType="touchUpInside" id="Kvg-Tn-Ppc"/>
-                                    <segue destination="hfE-iA-4Ge" kind="show" id="JZ6-oP-IL4"/>
+                                    <segue destination="hfE-iA-4Ge" kind="show" id="T2C-h1-9FG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfO-2X-cj8">
@@ -221,11 +220,22 @@
                                     <segue destination="EgR-xj-1id" kind="show" id="awQ-Cf-A2i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYP-wK-zu4">
+                                <rect key="frame" x="163" y="240" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="Kof-63-xQq" eventType="touchUpInside" id="H6X-pp-hhH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <accessibility key="accessibilityConfiguration" identifier="Dashboard"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" image="Home" id="w22-si-0En"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="IYP-wK-zu4" id="wzC-oI-BOc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHI-zZ-hRQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -528,10 +538,10 @@
         <image name="MapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z6c-Lp-mqp"/>
-        <segue reference="iH4-g6-ufN"/>
-        <segue reference="wjR-Q7-IZB"/>
-        <segue reference="plN-cN-yW7"/>
         <segue reference="CVp-rQ-74g"/>
+        <segue reference="plN-cN-yW7"/>
+        <segue reference="wjR-Q7-IZB"/>
+        <segue reference="iH4-g6-ufN"/>
+        <segue reference="z6c-Lp-mqp"/>
     </inferredMetricsTieBreakers>
 </document>
