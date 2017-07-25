@@ -70,6 +70,9 @@
                                 <rect key="frame" x="115" y="325" width="144" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login With Facebook"/>
+                                <connections>
+                                    <action selector="attemptFacebookLogin:" destination="Icm-pK-nib" eventType="touchUpInside" id="Gei-jD-Uno"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -503,7 +506,7 @@
             <objects>
                 <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" id="BVB-UK-xDV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4N-ll-hK3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g4N-ll-hK3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

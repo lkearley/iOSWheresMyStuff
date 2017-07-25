@@ -15,6 +15,10 @@
 		A602D0971F16B85500CCB6F1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D0961F16B85500CCB6F1 /* MapViewController.swift */; };
 		A602D0991F16B93800CCB6F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A602D0981F16B93800CCB6F1 /* GoogleService-Info.plist */; };
 		A602D09B1F182D1800CCB6F1 /* AddLostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602D09A1F182D1800CCB6F1 /* AddLostItemViewController.swift */; };
+		A607C00A1F26CCA0009AE08C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A607C0091F26CCA0009AE08C /* Bolts.framework */; };
+		A607C00C1F26CCBC009AE08C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A607C00B1F26CCBC009AE08C /* FBSDKCoreKit.framework */; };
+		A607C00E1F26CCCE009AE08C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A607C00D1F26CCCE009AE08C /* FBSDKLoginKit.framework */; };
+		A607C0101F26CCDE009AE08C /* FBSDKPlacesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A607C00F1F26CCDE009AE08C /* FBSDKPlacesKit.framework */; };
 		A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16161F1072CB00A6B984 /* AppDelegate.swift */; };
 		A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16181F1072CB00A6B984 /* ViewController.swift */; };
 		A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161A1F1072CB00A6B984 /* Main.storyboard */; };
@@ -54,6 +58,10 @@
 		A602D0961F16B85500CCB6F1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A602D0981F16B93800CCB6F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A602D09A1F182D1800CCB6F1 /* AddLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLostItemViewController.swift; sourceTree = "<group>"; };
+		A607C0091F26CCA0009AE08C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		A607C00B1F26CCBC009AE08C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A607C00D1F26CCCE009AE08C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A607C00F1F26CCDE009AE08C /* FBSDKPlacesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKPlacesKit.framework; path = ../../FacebookSDK/FBSDKPlacesKit.framework; sourceTree = "<group>"; };
 		A67C16131F1072CB00A6B984 /* iOSwheresMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSwheresMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67C16161F1072CB00A6B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67C16181F1072CB00A6B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +94,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B46D7AB52F08E7EBE28A4FE /* Pods_iOSwheresMyStuff.framework in Frameworks */,
+				A607C0101F26CCDE009AE08C /* FBSDKPlacesKit.framework in Frameworks */,
+				A607C00C1F26CCBC009AE08C /* FBSDKCoreKit.framework in Frameworks */,
+				A607C00E1F26CCCE009AE08C /* FBSDKLoginKit.framework in Frameworks */,
+				A607C00A1F26CCA0009AE08C /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +185,11 @@
 		D113AD0B7DC38BA2D07258CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A607C00F1F26CCDE009AE08C /* FBSDKPlacesKit.framework */,
 				30127844B899F694D1B4594A /* Pods_iOSwheresMyStuff.framework */,
+				A607C00B1F26CCBC009AE08C /* FBSDKCoreKit.framework */,
+				A607C00D1F26CCCE009AE08C /* FBSDKLoginKit.framework */,
+				A607C0091F26CCA0009AE08C /* Bolts.framework */,
 				B255B11AB72B21011A644AC7 /* Pods_iOSwheresMyStuffTests.framework */,
 			);
 			name = Frameworks;

@@ -12,6 +12,8 @@ target 'iOSwheresMyStuff' do
     pod 'Firebase/Auth'
     pod 'FacebookLogin'
     pod 'FacebookCore'
+    pod ‘FacebookShare’
+    pod ‘FBSDKPlacesKit’
 
 end
 

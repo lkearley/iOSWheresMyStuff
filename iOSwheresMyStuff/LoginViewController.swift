@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FacebookLogin
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -24,8 +26,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        let loginButton = FBSDKLoginButton()
-        loginButton.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +49,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func goToRegistration(_ sender: UIButton) {
+    @IBAction func attemptFacebookLogin(_ sender: UIButton) {
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            guard let accessToken = FBSDKAccessToken.current() else {
+                return
+            }
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            
+            Auth.auth().signIn(with: credential, completion: { (user, error) in
+                if let error = error {
+                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab") {
+                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            })
+            
+        }
     }
+    
     
     
 
