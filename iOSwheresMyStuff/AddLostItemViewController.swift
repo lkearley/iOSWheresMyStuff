@@ -25,6 +25,8 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
     @IBOutlet weak var lostDatePicker: UIDatePicker!
     
     @IBOutlet weak var lastKnownLocationMap: MKMapView!
+    
+    var itemPin :MKPointAnnotation? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +48,17 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
     
     //MARK: Actions
     @IBAction func onAddItemPressed(_ sender: UIButton) {
-        if itemNameTextField.text == "" || descriptionItemTextField.text == "" || rewardTextField.text == "" {
+        if itemNameTextField.text == "" || descriptionItemTextField.text == "" || rewardTextField.text == "" || itemPin == nil {
             let alertController = UIAlertController(title: "Error", message: "Please enter valid information for all fields", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        itemPin?.title = itemNameTextField.text!
+        itemPin?.subtitle = descriptionItemTextField.text!
         
-        let flag: Bool = Model.sharedModel.lostItemManager.addItem(item: LostItem(name: itemNameTextField.text!,description: descriptionItemTextField.text!, isResolved: false, reward: Int(rewardTextField.text!)!, date: lostDatePicker.date)!)
+        let flag: Bool = Model.sharedModel.lostItemManager.addItem(item: LostItem(name: itemNameTextField.text!,description: descriptionItemTextField.text!, isResolved: false, reward: Int(rewardTextField.text!)!, location: itemPin!, date: lostDatePicker.date)!)
         
         if !flag {
             let alertController = UIAlertController(title: "Error", message: "Error adding item, please try again", preferredStyle: .alert)
@@ -62,19 +66,26 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
             return
+        } else {
+            let alertController = UIAlertController(title: "Success", message: "Item Added", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            
         }
         
     }
     
     func addPin(longTouch: UILongPressGestureRecognizer) -> Bool {
         let touchPoint = longTouch.location(in: lastKnownLocationMap)
-        let newCoordinates = lastKnownLocationMap.convert(touchPoint, toCoordinateFrom: lastKnownLocationMap)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = newCoordinates
-        lastKnownLocationMap.addAnnotation(annotation)
+        let pinCoordinates = lastKnownLocationMap.convert(touchPoint, toCoordinateFrom: lastKnownLocationMap)
+        itemPin = MKPointAnnotation()
+        itemPin?.coordinate = pinCoordinates
+        lastKnownLocationMap.addAnnotation(itemPin!)
         return true
         
     }
+
 
     
 
