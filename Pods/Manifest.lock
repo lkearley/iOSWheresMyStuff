@@ -60,6 +60,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.10)
 
 DEPENDENCIES:
+  - FacebookCore
   - FacebookLogin
   - Firebase/Auth
   - Firebase/Core
@@ -84,6 +85,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
 
-PODFILE CHECKSUM: 4bcd8b1eef3c9ea0dca0f3ced087125edd6ae754
+PODFILE CHECKSUM: 8d5a1f21661ba46239ec4a3805a8436e7f1bf1b1
 
 COCOAPODS: 1.2.1

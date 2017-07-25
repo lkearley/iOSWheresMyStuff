@@ -11,6 +11,7 @@ target 'iOSwheresMyStuff' do
     pod 'GooglePlaces'
     pod 'Firebase/Auth'
     pod 'FacebookLogin'
+    pod 'FacebookCore'
 
 end
 
