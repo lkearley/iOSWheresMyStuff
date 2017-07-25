@@ -24,8 +24,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        let facebookLoginButton = FBSDKLoginButton()
-        facebookLoginButton.delegate = self
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
