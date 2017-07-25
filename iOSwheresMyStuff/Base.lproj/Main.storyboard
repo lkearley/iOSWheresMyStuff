@@ -170,8 +170,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Kof-63-xQq" kind="relationship" relationship="viewControllers" id="xQD-kF-WMb"/>
-                        <segue destination="uT6-fD-uR0" kind="relationship" relationship="viewControllers" id="wjR-Q7-IZB"/>
                         <segue destination="xLg-Km-266" kind="relationship" relationship="viewControllers" id="ZfO-5o-L6z"/>
+                        <segue destination="7bj-aL-OvR" kind="relationship" relationship="viewControllers" id="hYa-Lv-Dem"/>
                         <segue destination="Rs6-Ca-Bf9" kind="relationship" relationship="viewControllers" id="rfb-0Q-TDL"/>
                         <segue destination="cc6-AE-y0l" kind="relationship" relationship="viewControllers" id="Cpi-Up-t9o"/>
                     </connections>
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="4218" y="-163"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Found Item View Controller-->
         <scene sceneID="LvP-13-Kad">
             <objects>
-                <viewController id="vYp-Ft-amJ" sceneMemberID="viewController">
+                <viewController id="vYp-Ft-amJ" customClass="AddFoundItemViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nUt-Zj-boH"/>
                         <viewControllerLayoutGuide type="bottom" id="gNr-iI-hi0"/>
@@ -307,6 +307,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Item"/>
                                 <connections>
+                                    <action selector="addItem:" destination="vYp-Ft-amJ" eventType="touchUpInside" id="dCe-2f-jYW"/>
                                     <action selector="onAddItemPressed:" destination="EgR-xj-1id" eventType="touchUpInside" id="2qN-nC-88h"/>
                                 </connections>
                             </button>
@@ -320,15 +321,21 @@
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tWQ-aR-guJ">
                                 <rect key="frame" x="16" y="382" width="343" height="126"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="S9V-Cj-uVZ" id="MYC-jc-3m9"/>
+                        <outlet property="foundDatePicker" destination="syF-sV-hF0" id="h4v-ao-lVy"/>
+                        <outlet property="foundMapView" destination="tWQ-aR-guJ" id="XgP-bK-mkq"/>
+                        <outlet property="nameTextField" destination="kzf-Ir-6Sc" id="uVU-qs-tV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1n-zt-H9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6918" y="-2006"/>
+            <point key="canvasLocation" x="6917.6000000000004" y="-2006.4467766116943"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="0Oj-eE-C7J">
@@ -588,41 +595,6 @@
             </objects>
             <point key="canvasLocation" x="5470" y="-1218"/>
         </scene>
-        <!--Found Items List-->
-        <scene sceneID="BZI-qJ-cZY">
-            <objects>
-                <tableViewController id="uT6-fD-uR0" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="LVx-FH-Vnm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="DNp-x6-9nc">
-                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DNp-x6-9nc" id="NsM-V4-VsW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="XKC-iR-6y4" appends="YES" id="3h2-aQ-CBl"/>
-                                    <outletCollection property="gestureRecognizers" destination="XKC-iR-6y4" appends="YES" id="GLO-cX-zWN"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="uT6-fD-uR0" id="UkV-cy-7yC"/>
-                            <outlet property="delegate" destination="uT6-fD-uR0" id="trB-st-HUz"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Found Items List" image="FoundItemsList" selectedImage="FoundItemsList" id="9bJ-UC-hbD"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ChZ-QK-ewF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="XKC-iR-6y4"/>
-            </objects>
-            <point key="canvasLocation" x="5470" y="-163"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="bAz-lj-DRg">
             <objects>
@@ -696,14 +668,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-xU-26B">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xLg-Km-266" id="gwa-KU-is5"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AjF-5r-z96">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
@@ -739,10 +703,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-xU-26B">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xLg-Km-266" id="gwa-KU-is5"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Lost Items List" image="LostItemsList" id="0Hz-mQ-Wdk"/>
+                    <tabBarItem key="tabBarItem" title="Lost Items List" image="LostItemsList" selectedImage="LostItemsList" id="0Hz-mQ-Wdk"/>
                     <connections>
                         <outlet property="itemSearch" destination="YKb-xU-26B" id="yFt-O7-HhH"/>
                         <outlet property="itemTable" destination="AjF-5r-z96" id="SLU-8O-VUp"/>
@@ -760,7 +732,83 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3221.5999999999999" y="832.53373313343332"/>
+            <point key="canvasLocation" x="3294" y="847"/>
+        </scene>
+        <!--Found Item List-->
+        <scene sceneID="D1K-Ve-8Gs">
+            <objects>
+                <viewController id="7bj-aL-OvR" customClass="AddFoundItemViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kbE-JA-86y"/>
+                        <viewControllerLayoutGuide type="bottom" id="03t-hh-vMi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dzw-EI-KdO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cRz-At-gDo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="psQ-GR-U7G">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psQ-GR-U7G" id="Et1-8w-AbV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kwl-Kc-OcD">
+                                                    <rect key="frame" x="8" y="3" width="91" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NB-e9-p75">
+                                                    <rect key="frame" x="107" y="3" width="45" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1Z-Sa-KRf">
+                                                    <rect key="frame" x="107" y="30" width="88" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkv-b4-IZg">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7bj-aL-OvR" id="AM4-Ra-nEO"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Found Item List" image="FoundItemsList" selectedImage="FoundItemsList" id="MRe-MR-F1V"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="J36-Et-sqY" id="xP9-fB-Ei0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwN-Li-vag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="J36-Et-sqY">
+                    <connections>
+                        <outlet property="delegate" destination="7bj-aL-OvR" id="NHG-OH-lUj"/>
+                        <outlet property="searchBar" destination="vkv-b4-IZg" id="sEJ-HM-PEa"/>
+                        <outlet property="searchContentsController" destination="7bj-aL-OvR" id="MgC-bJ-hVr"/>
+                        <outlet property="searchResultsDataSource" destination="7bj-aL-OvR" id="CdI-Q1-UxF"/>
+                        <outlet property="searchResultsDelegate" destination="7bj-aL-OvR" id="d1U-54-Ke0"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="5469.6000000000004" y="-163.26836581709148"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PEH-BQ-rb9">
@@ -871,6 +919,6 @@
         <image name="MapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iLn-Ri-HrT"/>
+        <segue reference="7qa-Ym-GXA"/>
     </inferredMetricsTieBreakers>
 </document>
