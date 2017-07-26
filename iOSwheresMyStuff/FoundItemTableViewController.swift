@@ -47,6 +47,23 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
         
     }
     
+    
+   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        Model.sharedModel.foundItemManager.selectedItem = item
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FoundItemPage")
+        self.present(vc!, animated: true, completion: nil)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue" {
+            // Setup new view controller
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

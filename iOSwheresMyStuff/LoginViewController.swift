@@ -44,6 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
+            Model.sharedModel.userManager.currentUser = User(password: self.passwordTextField.text!, email: self.passwordTextField.text!)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
             self.present(vc!, animated: true, completion: nil)
         }

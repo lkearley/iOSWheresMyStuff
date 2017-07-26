@@ -10,7 +10,6 @@ import Foundation
 
 class UserManager {
     
-    static let sharedManager = UserManager()
     var currentUser: User!
     
 }

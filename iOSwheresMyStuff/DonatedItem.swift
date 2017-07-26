@@ -8,22 +8,25 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class DonatedItem: Item {
     var name: String
     var description: String
     var isResolved: Bool
     //var category: ItemCategory
+    var location: MKPointAnnotation
     var date: Date
     
     
-    init?(name: String, description: String, isResolved: Bool, reward: Int, date: Date) {
+    init?(name: String, description: String, isResolved: Bool, reward: Int, location: MKPointAnnotation, date: Date) {
         guard !name.isEmpty && !description.isEmpty else {
             return nil
         }
         self.name = name
         self.description = description
         self.isResolved = false
+        self.location = location
        //self.category = category
         self.date = date
     }

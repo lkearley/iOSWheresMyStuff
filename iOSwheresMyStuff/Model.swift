@@ -14,10 +14,12 @@ class Model {
     
     var foundItemManager: ItemManager
     var lostItemManager: ItemManager
+    var userManager: UserManager
     
     init() {
         self.foundItemManager = ItemManager()
         self.lostItemManager = ItemManager()
+        self.userManager = UserManager()
     }
     
 }

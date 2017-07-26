@@ -10,6 +10,7 @@ import Foundation
 
 class ItemManager {
     var items: [Item]
+    var selectedItem: Item? = nil
     
     init() {
         self.items = [Item]()
