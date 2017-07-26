@@ -58,7 +58,7 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
         itemPin?.title = itemNameTextField.text!
         itemPin?.subtitle = descriptionItemTextField.text!
         
-        let flag: Bool = Model.sharedModel.lostItemManager.addItem(item: LostItem(name: itemNameTextField.text!,description: descriptionItemTextField.text!, isResolved: false, reward: Int(rewardTextField.text!)!, location: itemPin!, date: lostDatePicker.date)!)
+        let flag: Bool = Model.sharedModel.itemManager.addLostItem(item: LostItem(name: itemNameTextField.text!,description: descriptionItemTextField.text!, isResolved: false, reward: Int(rewardTextField.text!)!, location: itemPin!, date: lostDatePicker.date)!)
         
         if !flag {
             let alertController = UIAlertController(title: "Error", message: "Error adding item, please try again", preferredStyle: .alert)

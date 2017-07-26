@@ -24,8 +24,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-        let itemsfound = Model.sharedModel.foundItemManager.items
-        let itemsLost = Model.sharedModel.lostItemManager.items
+        let itemsfound = Model.sharedModel.itemManager.foundItems
+        let itemsLost = Model.sharedModel.itemManager.lostItems
         
         
         for item in itemsfound {

@@ -23,6 +23,7 @@
 		A63786571F280015001898B0 /* AddFoundItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63786561F280015001898B0 /* AddFoundItemViewController.swift */; };
 		A63786591F280420001898B0 /* FoundItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63786581F280420001898B0 /* FoundItemTableViewController.swift */; };
 		A637865D1F283563001898B0 /* FoundItemPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637865C1F283563001898B0 /* FoundItemPageViewController.swift */; };
+		A637865F1F2841F7001898B0 /* LostItemPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637865E1F2841F7001898B0 /* LostItemPageViewController.swift */; };
 		A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16161F1072CB00A6B984 /* AppDelegate.swift */; };
 		A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16181F1072CB00A6B984 /* ViewController.swift */; };
 		A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161A1F1072CB00A6B984 /* Main.storyboard */; };
@@ -31,7 +32,6 @@
 		A67C162C1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C162B1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift */; };
 		A67C16371F1072F500A6B984 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16361F1072F500A6B984 /* Admin.swift */; };
 		A67C16391F10730F00A6B984 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16381F10730F00A6B984 /* User.swift */; };
-		A67C163B1F10733500A6B984 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C163A1F10733500A6B984 /* Item.swift */; };
 		A67C163D1F10735100A6B984 /* FoundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C163C1F10735100A6B984 /* FoundItem.swift */; };
 		A67C163F1F10736700A6B984 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C163E1F10736700A6B984 /* ItemCategory.swift */; };
 		A67C16411F10737D00A6B984 /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16401F10737D00A6B984 /* ItemManager.swift */; };
@@ -70,6 +70,7 @@
 		A63786561F280015001898B0 /* AddFoundItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoundItemViewController.swift; sourceTree = "<group>"; };
 		A63786581F280420001898B0 /* FoundItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundItemTableViewController.swift; sourceTree = "<group>"; };
 		A637865C1F283563001898B0 /* FoundItemPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundItemPageViewController.swift; sourceTree = "<group>"; };
+		A637865E1F2841F7001898B0 /* LostItemPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LostItemPageViewController.swift; sourceTree = "<group>"; };
 		A67C16131F1072CB00A6B984 /* iOSwheresMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSwheresMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67C16161F1072CB00A6B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67C16181F1072CB00A6B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		A67C162D1F1072CC00A6B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A67C16361F1072F500A6B984 /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		A67C16381F10730F00A6B984 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A67C163A1F10733500A6B984 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A67C163C1F10735100A6B984 /* FoundItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundItem.swift; sourceTree = "<group>"; };
 		A67C163E1F10736700A6B984 /* ItemCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		A67C16401F10737D00A6B984 /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemManager.swift; sourceTree = "<group>"; };
@@ -168,10 +168,10 @@
 				A63786541F27E706001898B0 /* LostItemTableViewController.swift */,
 				A63786581F280420001898B0 /* FoundItemTableViewController.swift */,
 				A637865C1F283563001898B0 /* FoundItemPageViewController.swift */,
+				A637865E1F2841F7001898B0 /* LostItemPageViewController.swift */,
 				A602D08E1F114E5200CCB6F1 /* UserManager.swift */,
 				A67C16361F1072F500A6B984 /* Admin.swift */,
 				A67C16381F10730F00A6B984 /* User.swift */,
-				A67C163A1F10733500A6B984 /* Item.swift */,
 				A67C163C1F10735100A6B984 /* FoundItem.swift */,
 				A67C16421F10739500A6B984 /* LostItem.swift */,
 				A67C163E1F10736700A6B984 /* ItemCategory.swift */,
@@ -411,11 +411,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A67C16491F10816300A6B984 /* LoginViewController.swift in Sources */,
-				A67C163B1F10733500A6B984 /* Item.swift in Sources */,
 				A602D08F1F114E5200CCB6F1 /* UserManager.swift in Sources */,
 				A67C164B1F10842200A6B984 /* DatabaseManager.swift in Sources */,
 				A63786551F27E706001898B0 /* LostItemTableViewController.swift in Sources */,
 				A67C163F1F10736700A6B984 /* ItemCategory.swift in Sources */,
+				A637865F1F2841F7001898B0 /* LostItemPageViewController.swift in Sources */,
 				A67C16391F10730F00A6B984 /* User.swift in Sources */,
 				A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */,
 				A63786571F280015001898B0 /* AddFoundItemViewController.swift in Sources */,

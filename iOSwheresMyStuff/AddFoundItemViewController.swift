@@ -48,7 +48,7 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         itemPin?.title = nameTextField.text!
         itemPin?.subtitle = descriptionTextField.text!
         
-        let flag: Bool = Model.sharedModel.foundItemManager.addItem(item: FoundItem(name: nameTextField.text!,description: descriptionTextField.text!, isResolved: false, location: itemPin!, date: foundDatePicker.date)!)
+        let flag: Bool = Model.sharedModel.itemManager.addFoundItem(item: FoundItem(name: nameTextField.text!,description: descriptionTextField.text!, isResolved: false, location: itemPin!, date: foundDatePicker.date)!)
         
         if !flag {
             let alertController = UIAlertController(title: "Error", message: "Error adding item, please try again", preferredStyle: .alert)

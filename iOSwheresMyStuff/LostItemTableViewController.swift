@@ -12,13 +12,13 @@ import UIKit
 
 class LostItemTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
     
-    var items: [Item] = [Item]()
+    var items: [LostItem] = [LostItem]()
     //MARK: Properites
     @IBOutlet weak var itemSearch: UISearchBar!
     @IBOutlet weak var itemTable: UITableView!
 
     override func viewDidLoad() {
-        items = Model.sharedModel.lostItemManager.items
+        items = Model.sharedModel.itemManager.lostItems
         itemTable.delegate = self
         itemSearch.delegate = self
         itemTable.dataSource = self
@@ -46,6 +46,13 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        Model.sharedModel.itemManager.selectedLostItem = item
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LostItemPage")
+        self.present(vc!, animated: true, completion: nil)
+        
+    }
     /*
     // MARK: - Navigation
 

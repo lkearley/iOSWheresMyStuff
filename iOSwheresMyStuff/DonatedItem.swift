@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class DonatedItem: Item {
+class DonatedItem {
     var name: String
     var description: String
     var isResolved: Bool

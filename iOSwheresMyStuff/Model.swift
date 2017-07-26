@@ -12,13 +12,11 @@ class Model {
     
     static let sharedModel: Model = Model()
     
-    var foundItemManager: ItemManager
-    var lostItemManager: ItemManager
+    var itemManager: ItemManager
     var userManager: UserManager
     
     init() {
-        self.foundItemManager = ItemManager()
-        self.lostItemManager = ItemManager()
+        self.itemManager = ItemManager()
         self.userManager = UserManager()
     }
     

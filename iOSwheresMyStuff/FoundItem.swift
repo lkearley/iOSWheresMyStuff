@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class FoundItem: Item {
+class FoundItem {
     var name: String
     var description: String
     var isResolved: Bool

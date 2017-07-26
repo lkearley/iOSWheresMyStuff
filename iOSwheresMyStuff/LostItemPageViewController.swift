@@ -1,5 +1,5 @@
 //
-//  FoundItemPageViewController.swift
+//  LostItemPageViewController.swift
 //  iOSwheresMyStuff
 //
 //  Created by Lauren Kearley on 7/25/17.
@@ -9,25 +9,29 @@
 import UIKit
 import MapKit
 
-class FoundItemPageViewController: UIViewController {
+class LostItemPageViewController: UIViewController {
 
-    @IBOutlet weak var itemLocation: MKMapView!
+    @IBOutlet weak var lostMap: MKMapView!
+    @IBOutlet weak var itemPic: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemDateLabel: UILabel!
-    @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemDescription: UILabel!
+    @IBOutlet weak var itemRewardLabel: UILabel!
+    @IBOutlet weak var itemDescriptionLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let item = Model.sharedModel.itemManager.selectedFoundItem
+        let item = Model.sharedModel.itemManager.selectedLostItem
         itemNameLabel.text = item?.name
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MMM-yyyy"
         let dateString = formatter.string(from: (item?.date)!)
         itemDateLabel.text = dateString
-        itemDescription.text = item?.description
-        let location: MKPointAnnotation = (item!).location
-        itemLocation.addAnnotation(location as MKAnnotation)
+        itemDescriptionLabel.text = item?.description
+        let location: MKPointAnnotation = item!.location
+        lostMap.addAnnotation(location as MKAnnotation)
+        itemRewardLabel.text = "$" + "\(item?.reward ?? 0)"
+        super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }

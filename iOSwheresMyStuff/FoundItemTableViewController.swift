@@ -11,13 +11,13 @@ import UIKit
 class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource {
 
     
-    var items: [Item] = [Item]()
+    var items: [FoundItem] = [FoundItem]()
     //MARK:Properties
     @IBOutlet weak var foundSearch: UISearchBar!
     @IBOutlet weak var foundTable: UITableView!
 
     override func viewDidLoad() {
-        items = Model.sharedModel.foundItemManager.items
+        items = Model.sharedModel.itemManager.foundItems
         foundTable.delegate = self
         foundSearch.delegate = self
         foundTable.dataSource = self
@@ -51,18 +51,13 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.item]
-        Model.sharedModel.foundItemManager.selectedItem = item
+        Model.sharedModel.itemManager.selectedFoundItem = item
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "FoundItemPage")
         self.present(vc!, animated: true, completion: nil)
         
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue" {
-            // Setup new view controller
-        }
-    }
     
 
     /*
