@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
+import Firebase
 
 class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
@@ -18,10 +20,11 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
     @IBOutlet weak var foundMapView: MKMapView!
     
     var itemPin :MKPointAnnotation? = nil
+    var refs: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        refs = Database.database().reference(withPath: "found-items")
         let longTouch = UILongPressGestureRecognizer(target: self, action: #selector(self.addPin))
         longTouch.minimumPressDuration = 1
         longTouch.delegate = self
@@ -48,7 +51,9 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         itemPin?.title = nameTextField.text!
         itemPin?.subtitle = descriptionTextField.text!
         
-        let flag: Bool = Model.sharedModel.itemManager.addFoundItem(item: FoundItem(name: nameTextField.text!,description: descriptionTextField.text!, isResolved: false, location: itemPin!, date: foundDatePicker.date, posterEmail: Model.sharedModel.userManager.currentUser.email)!)
+        let newItem = FoundItem(name: nameTextField.text!,description: descriptionTextField.text!, location: itemPin!, date: foundDatePicker.date, posterEmail: Model.sharedModel.userManager.currentUser.email)!
+        
+        let flag: Bool = Model.sharedModel.itemManager.addFoundItem(item: newItem)
         
         if !flag {
             let alertController = UIAlertController(title: "Error", message: "Error adding item, please try again", preferredStyle: .alert)
@@ -57,6 +62,25 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
             self.present(alertController, animated: true, completion: nil)
             return
         } else {
+            let coordinate: CLLocationCoordinate2D = (itemPin?.coordinate)!
+            let log = coordinate.longitude
+            let lati = coordinate.latitude
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd-MMM-yyyy"
+            let dateString = formatter.string(from: (newItem.date))
+            let key = refs.childByAutoId().key
+            print("Im still here")
+            
+            let item = ["name": nameTextField.text! as String,
+                        "description": descriptionTextField.text! as String,
+                        "latitude": String(lati),
+                        "longitude": String(log),
+                        "date": dateString,
+                        "key": key,
+                        "contact": newItem.posterEmail
+                        ]
+            
+            refs.child(key).setValue(item)
             let alertController = UIAlertController(title: "Success", message: "Item Added", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)

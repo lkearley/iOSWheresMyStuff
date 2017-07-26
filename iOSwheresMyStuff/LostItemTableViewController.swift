@@ -9,16 +9,58 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import MapKit
 
 class LostItemTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+    
     
     var items: [LostItem] = [LostItem]()
     //MARK: Properites
     @IBOutlet weak var itemSearch: UISearchBar!
     @IBOutlet weak var itemTable: UITableView!
-
+    
     override func viewDidLoad() {
-        items = Model.sharedModel.itemManager.lostItems
+        let ref = Database.database().reference(withPath: "lost-items")
+        ref.observe(DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.childrenCount > 0 {
+                self.items.removeAll()
+                
+                //iterating through all the values
+                for item in snapshot.children.allObjects as! [DataSnapshot] {
+                    let Object = item.value as? [String: AnyObject]
+                    let itemName  = Object?["name"]
+                    let itemDescription  = Object?["description"]
+                    let itemReward = Object?["reward"]
+                    let itemDate = Object?["date"]
+                    let itemLat = Object?["latitude"]
+                    let itemLong = Object?["longitude"]
+                    let itemEmail = Object?["contact"]
+                    
+    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd-MMM-yyyy"
+                    let date = formatter.date(from: itemDate as! String)
+                    let lat = (itemLat)?.doubleValue
+                    let longi = (itemLong)?.doubleValue
+                    let coordinates = CLLocationCoordinate2D(latitude: lat!, longitude: longi!)
+                    let pin = MKPointAnnotation()
+                    pin.coordinate = coordinates
+                    pin.title = itemName as? String
+                    pin.subtitle = itemDescription as? String
+                    let item = LostItem(name: itemName as! String, description: itemDescription as! String, reward: Int(itemReward as! String)!, location: pin, date: date!, posterEmail: itemEmail as! String)
+                    
+                    _ = Model.sharedModel.itemManager.addLostItem(item: item!)
+                    self.items = Model.sharedModel.itemManager.lostItems
+                }
+                
+                
+                self.itemTable.reloadData()
+            }
+        })
+        
         itemTable.delegate = self
         itemSearch.delegate = self
         itemTable.dataSource = self

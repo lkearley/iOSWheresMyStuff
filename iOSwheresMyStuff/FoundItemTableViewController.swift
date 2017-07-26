@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MapKit
+import Firebase
+import FirebaseDatabase
 
 class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource {
 
@@ -17,7 +20,44 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
     @IBOutlet weak var foundTable: UITableView!
 
     override func viewDidLoad() {
-        items = Model.sharedModel.itemManager.foundItems
+        let ref = Database.database().reference(withPath: "found-items")
+        ref.observe(DataEventType.value, with: { (snapshot) in
+            
+            if snapshot.childrenCount > 0 {
+                self.items.removeAll()
+                
+                //iterating through all the values
+                for item in snapshot.children.allObjects as! [DataSnapshot] {
+                    let Object = item.value as? [String: AnyObject]
+                    let itemName  = Object?["name"]
+                    let itemDescription  = Object?["description"]
+                    let itemDate = Object?["date"]
+                    let itemLat = Object?["latitude"]
+                    let itemLong = Object?["longitude"]
+                    let itemEmail = Object?["contact"]
+                    
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd-MMM-yyyy"
+                    let date = formatter.date(from: itemDate as! String)
+                    let lat = (itemLat)?.doubleValue
+                    let longi = (itemLong)?.doubleValue
+                    let coordinates = CLLocationCoordinate2D(latitude: lat!, longitude: longi!)
+                    let pin = MKPointAnnotation()
+                    pin.coordinate = coordinates
+                    pin.title = itemName as? String
+                    pin.subtitle = itemDescription as? String
+                    let item = FoundItem(name: itemName as! String, description: itemDescription as! String, location: pin, date: date!, posterEmail: itemEmail as! String)
+                    
+                    _ = Model.sharedModel.itemManager.addFoundItem(item: item!)
+                    self.items = Model.sharedModel.itemManager.foundItems
+                }
+                
+                
+                self.foundTable.reloadData()
+            }
+        })
+        
         foundTable.delegate = self
         foundSearch.delegate = self
         foundTable.dataSource = self

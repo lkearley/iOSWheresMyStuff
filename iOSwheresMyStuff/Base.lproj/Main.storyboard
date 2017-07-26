@@ -172,8 +172,8 @@
                         <segue destination="Kof-63-xQq" kind="relationship" relationship="viewControllers" id="xQD-kF-WMb"/>
                         <segue destination="Rs6-Ca-Bf9" kind="relationship" relationship="viewControllers" id="rfb-0Q-TDL"/>
                         <segue destination="cc6-AE-y0l" kind="relationship" relationship="viewControllers" id="Cpi-Up-t9o"/>
-                        <segue destination="xLg-Km-266" kind="relationship" relationship="viewControllers" id="NgE-2p-g6K"/>
-                        <segue destination="7bj-aL-OvR" kind="relationship" relationship="viewControllers" id="flv-9a-fYU"/>
+                        <segue destination="7bj-aL-OvR" kind="relationship" relationship="viewControllers" id="a0p-xC-a3i"/>
+                        <segue destination="xLg-Km-266" kind="relationship" relationship="viewControllers" id="gmk-rM-KPY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08N-3P-JGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,7 +462,7 @@
             <objects>
                 <navigationController id="cc6-AE-y0l" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add Item" image="AddItem" id="z3Z-vF-lZ2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fCB-5g-KZS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fCB-5g-KZS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -653,6 +653,11 @@
                                     <action selector="sendEmail:" destination="qeH-z8-nt3" eventType="touchUpInside" id="Wk5-ak-m74"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byG-Pb-0xP">
+                                <rect key="frame" x="164" y="607" width="46" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -682,7 +687,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AjF-5r-z96">
-                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -726,7 +731,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKb-xU-26B">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -755,7 +760,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3580" y="847"/>
+            <point key="canvasLocation" x="3580" y="846.9265367316342"/>
         </scene>
         <!--Found Item List-->
         <scene sceneID="D1K-Ve-8Gs">
@@ -844,20 +849,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="6101.6000000000004" y="-163.26836581709148"/>
-        </scene>
-        <!--Found Item List-->
-        <scene sceneID="7yi-yo-8RS">
-            <objects>
-                <navigationController storyboardIdentifier="FoundItemList" id="t44-L2-Nso" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Found Item List" image="FoundItemsList" id="hOH-cQ-mYh"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7dc-R5-Is7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dBE-Vi-7EC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5231" y="-163"/>
         </scene>
         <!--Found Item Page View Controller-->
         <scene sceneID="PEH-BQ-rb9">
@@ -954,9 +945,9 @@
         <!--Navigation Controller-->
         <scene sceneID="8XY-PE-x48">
             <objects>
-                <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" id="BVB-UK-xDV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BVB-UK-xDV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g4N-ll-hK3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4N-ll-hK3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -978,6 +969,6 @@
         <image name="UserPage" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LbV-qX-4Eb"/>
+        <segue reference="iLn-Ri-HrT"/>
     </inferredMetricsTieBreakers>
 </document>
