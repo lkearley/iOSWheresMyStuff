@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import MessageUI
 
-class LostItemPageViewController: UIViewController {
+class LostItemPageViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var lostMap: MKMapView!
     @IBOutlet weak var itemPic: UIImageView!
@@ -34,6 +35,34 @@ class LostItemPageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func sendEmail(_ sender: UIButton) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "There was a problem sending your email", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients(["someone@somewhere.com"])
+        mailComposerVC.setSubject("Where's My Stuff: Lost Item Inquiry")
+        
+        return mailComposerVC
+    }
+    
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
