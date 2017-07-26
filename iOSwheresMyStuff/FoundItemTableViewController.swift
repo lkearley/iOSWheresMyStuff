@@ -8,12 +8,19 @@
 
 import UIKit
 
-class FoundItemTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource {
+
     
     var items: [Item] = [Item]()
     //MARK:Properties
+    @IBOutlet weak var foundSearch: UISearchBar!
+    @IBOutlet weak var foundTable: UITableView!
 
     override func viewDidLoad() {
+        items = Model.sharedModel.foundItemManager.items
+        foundTable.delegate = self
+        foundSearch.delegate = self
+        foundTable.dataSource = self
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -29,9 +36,15 @@ class FoundItemTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.item].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "item", for: indexPath) as!ItemCell
+        let item = items[indexPath.item]
+        let name = item.name
+        cell.setName(lb: name, controller: self)
+        let description = item.description
+        cell.setDescription(lb: description, controller: self)
+        
         return cell
+        
     }
     
 
@@ -45,4 +58,33 @@ class FoundItemTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     */
 
+}
+
+class ItemCell: UITableViewCell {
+    
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var nameCellLabel: UILabel!
+    @IBOutlet weak var descriptionCellLabel: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    func setName(lb: String, controller: FoundItemTableViewController) {
+        self.nameCellLabel.text = lb
+    }
+    
+    func setDescription(lb: String, controller: FoundItemTableViewController) {
+        self.descriptionCellLabel.text = lb
+    }
+    
+    
 }

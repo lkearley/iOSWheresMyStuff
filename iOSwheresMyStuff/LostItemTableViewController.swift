@@ -22,7 +22,6 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
         itemTable.delegate = self
         itemSearch.delegate = self
         itemTable.dataSource = self
-        itemTable.register(UITableViewCell.self, forCellReuseIdentifier: "customcell")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -38,8 +37,12 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.item].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "litem", for: indexPath) as!lostItemCell
+        let item = items[indexPath.item]
+        let name = item.name
+        cell.setName(lb: name, controller: self)
+        let description = item.description
+        cell.setDescription(lb: description, controller: self)
         return cell
     }
 
@@ -53,4 +56,32 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     */
 
+}
+
+class lostItemCell: UITableViewCell {
+    
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var itemDescriptionLabel: UILabel!
+    @IBOutlet weak var itemPic: UIImageView!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    func setName(lb: String, controller: LostItemTableViewController) {
+        self.itemNameLabel.text = lb
+    }
+    
+    func setDescription(lb: String, controller: LostItemTableViewController) {
+        self.itemDescriptionLabel.text = lb
+    }
+    
 }
