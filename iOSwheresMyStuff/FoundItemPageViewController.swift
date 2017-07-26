@@ -40,9 +40,8 @@ class FoundItemPageViewController: UIViewController, MFMailComposeViewController
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
-        mailComposerVC.setToRecipients(["someone@somewhere.com"])
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([(Model.sharedModel.itemManager.selectedFoundItem!.posterEmail)])
         mailComposerVC.setSubject("Where's My Stuff: Found Item Inquiry")
         
         return mailComposerVC

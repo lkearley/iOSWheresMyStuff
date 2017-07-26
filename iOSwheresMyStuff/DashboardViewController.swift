@@ -13,9 +13,13 @@ import FirebaseAuth
 class DashboardViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var namePlaceholderText: UILabel!
+    @IBOutlet weak var profilePicImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        namePlaceholderText.text = Model.sharedModel.userManager.currentUser.name
+        profilePicImage.image = Model.sharedModel.userManager.currentUser.photo
 
         // Do any additional setup after loading the view.
     }

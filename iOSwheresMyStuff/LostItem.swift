@@ -18,9 +18,10 @@ class LostItem {
     var location: MKPointAnnotation
     var reward: Int
     var date: Date
+    var posterEmail: String
     
-    init?(name: String, description: String, isResolved: Bool, reward: Int, location: MKPointAnnotation, date: Date) {
-        guard !name.isEmpty && !description.isEmpty else {
+    init?(name: String, description: String, isResolved: Bool, reward: Int, location: MKPointAnnotation, date: Date, posterEmail: String) {
+        guard !name.isEmpty && !description.isEmpty && !posterEmail.isEmpty else {
             return nil
         }
         self.name = name
@@ -30,6 +31,7 @@ class LostItem {
         self.location = location
         self.reward = reward
         self.date = date
+        self.posterEmail = posterEmail
     }
     
     

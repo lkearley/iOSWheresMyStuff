@@ -52,9 +52,8 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
     
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-        
-        mailComposerVC.setToRecipients(["someone@somewhere.com"])
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients([(Model.sharedModel.itemManager.selectedLostItem!.posterEmail)])
         mailComposerVC.setSubject("Where's My Stuff: Lost Item Inquiry")
         
         return mailComposerVC

@@ -17,9 +17,10 @@ class FoundItem {
     var location: MKPointAnnotation
     //var category: ItemCategory
     var date: Date
+    var posterEmail: String
     
-    init?(name: String, description: String, isResolved: Bool, location: MKPointAnnotation, date: Date) {
-        guard !name.isEmpty && !description.isEmpty else {
+    init?(name: String, description: String, isResolved: Bool, location: MKPointAnnotation, date: Date, posterEmail: String) {
+        guard !name.isEmpty && !description.isEmpty && !posterEmail.isEmpty else {
             return nil
         }
         self.name = name
@@ -28,5 +29,7 @@ class FoundItem {
         self.location = location
         //self.category = category
         self.date = date
+        self.posterEmail = posterEmail
+        
     }
 }

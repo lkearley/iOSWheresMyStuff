@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //MARK: Actions
     
     @IBAction func attemptLogin(_ sender: UIButton) {
-        Auth.auth().signIn(withEmail: usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+        Auth.auth().signIn(withEmail: self.usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
             if let error = error {
                 let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -44,7 +44,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            Model.sharedModel.userManager.currentUser = User(password: self.passwordTextField.text!, email: self.passwordTextField.text!)
+            let user = Auth.auth().currentUser;
+            var userName: String = self.usernameTextField.text!
+            var url: UIImage = UIImage(named: "UserDefualt")!
+            
+            if (user != nil) {
+                userName = (user?.displayName!)!
+                if let imageData: NSData = NSData(contentsOf: (user?.photoURL)! as URL) {
+                    url = UIImage(data: imageData as Data)!
+                }
+            }
+            
+            
+            Model.sharedModel.userManager.currentUser = User(password: self.passwordTextField.text!, email: self.usernameTextField.text!, name: userName, photo: url)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
             self.present(vc!, animated: true, completion: nil)
         }
@@ -75,6 +87,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.present(alertController, animated: true, completion: nil)
                     return
                 }
+                let user = Auth.auth().currentUser;
+                let userName: String = (user?.displayName)!
+                let userEmail: String = (user?.email)!
+                var url: UIImage = UIImage(named: "UserDefault")!
+                
+                if (user != nil) {
+                    if let imageData: NSData = NSData(contentsOf: (user?.photoURL)! as URL) {
+                        url = UIImage(data: imageData as Data)!
+                    }
+                }
+                Model.sharedModel.userManager.currentUser = User(password: "N/A", email: userEmail, name: userName, photo: url)
                 
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Tab") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController

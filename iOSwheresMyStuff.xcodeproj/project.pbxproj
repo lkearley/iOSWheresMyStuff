@@ -27,7 +27,7 @@
 		A67C16171F1072CB00A6B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16161F1072CB00A6B984 /* AppDelegate.swift */; };
 		A67C16191F1072CB00A6B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16181F1072CB00A6B984 /* ViewController.swift */; };
 		A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161A1F1072CB00A6B984 /* Main.storyboard */; };
-		A67C161E1F1072CB00A6B984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67C161D1F1072CB00A6B984 /* Assets.xcassets */; };
+		A67C161E1F1072CB00A6B984 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67C161D1F1072CB00A6B984 /* assets.xcassets */; };
 		A67C16211F1072CB00A6B984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67C161F1F1072CB00A6B984 /* LaunchScreen.storyboard */; };
 		A67C162C1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C162B1F1072CC00A6B984 /* iOSwheresMyStuffTests.swift */; };
 		A67C16371F1072F500A6B984 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67C16361F1072F500A6B984 /* Admin.swift */; };
@@ -75,7 +75,7 @@
 		A67C16161F1072CB00A6B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A67C16181F1072CB00A6B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A67C161B1F1072CB00A6B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A67C161D1F1072CB00A6B984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A67C161D1F1072CB00A6B984 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		A67C16201F1072CB00A6B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A67C16221F1072CB00A6B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A67C16271F1072CC00A6B984 /* iOSwheresMyStuffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSwheresMyStuffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,7 +178,7 @@
 				A67C16401F10737D00A6B984 /* ItemManager.swift */,
 				A67C16441F1073BA00A6B984 /* DonatedItem.swift */,
 				A67C16461F1073D300A6B984 /* Model.swift */,
-				A67C161D1F1072CB00A6B984 /* Assets.xcassets */,
+				A67C161D1F1072CB00A6B984 /* assets.xcassets */,
 				A67C161F1F1072CB00A6B984 /* LaunchScreen.storyboard */,
 				A67C16221F1072CB00A6B984 /* Info.plist */,
 			);
@@ -298,7 +298,7 @@
 			files = (
 				A67C16211F1072CB00A6B984 /* LaunchScreen.storyboard in Resources */,
 				A602D0991F16B93800CCB6F1 /* GoogleService-Info.plist in Resources */,
-				A67C161E1F1072CB00A6B984 /* Assets.xcassets in Resources */,
+				A67C161E1F1072CB00A6B984 /* assets.xcassets in Resources */,
 				A67C161C1F1072CB00A6B984 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
