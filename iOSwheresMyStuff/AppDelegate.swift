@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyBjGFbL0xVLbt6sFNoZG2fNpUW8M5ygKXE")
         GMSPlacesClient.provideAPIKey("AIzaSyBjGFbL0xVLbt6sFNoZG2fNpUW8M5ygKXE")
         // Override point for customization after application launch.
+        UITabBar.appearance().tintColor = UIColor(red:0.20, green:0.20, blue:0.00, alpha:1.0)
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
