@@ -81,8 +81,7 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
             formatter.dateFormat = "dd-MMM-yyyy"
             let dateString = formatter.string(from: (newItem.date))
             let key = ref.childByAutoId().key
-            
-            //creating artist with the given values
+
             let item = ["name": itemNameTextField.text! as String,
                           "description": descriptionItemTextField.text! as String,
                           "reward": rewardTextField.text! as String,

@@ -266,6 +266,7 @@
 				TargetAttributes = {
 					A67C16121F1072CB00A6B984 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 59R2MUHDY5;
 						ProvisioningStyle = Automatic;
 					};
 					A67C16261F1072CC00A6B984 = {
@@ -577,6 +578,7 @@
 			baseConfigurationReference = 2D3839C45FE185C54C948337 /* Pods-iOSwheresMyStuff.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 59R2MUHDY5;
 				INFOPLIST_FILE = iOSwheresMyStuff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
@@ -591,6 +593,7 @@
 			baseConfigurationReference = FD1312DF3A1FA798B6BEC001 /* Pods-iOSwheresMyStuff.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 59R2MUHDY5;
 				INFOPLIST_FILE = iOSwheresMyStuff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";

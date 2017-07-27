@@ -45,6 +45,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             let emailTextField = alertController.textFields![0] as UITextField
             email = emailTextField.text!
+            if email != "" {
+                Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                    if let error = error {
+                        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(defaultAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        return
+                    }
+                    
+                }
+                
+                
+            }
             
         })
         alertController.addTextField { (textField : UITextField!) -> Void in
@@ -53,20 +67,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(saveAction)
         self.present(alertController, animated: true, completion: nil)
         
-        if email != "" {
-            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
-                if let error = error {
-                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    return
-                }
-                
-            }
-            
-            
-        }
     }
     
     @IBAction func attemptLogin(_ sender: UIButton) {
