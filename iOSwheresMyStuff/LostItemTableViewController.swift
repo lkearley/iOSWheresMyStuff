@@ -69,6 +69,8 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
         itemTable.delegate = self
         itemSearch.delegate = self
         itemTable.dataSource = self
+        
+        itemTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -88,11 +90,19 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "litem", for: indexPath) as!lostItemCell
-        let item = items[indexPath.item]
-        let name = item.name
-        cell.setName(lb: name, controller: self)
-        let description = item.description
-        cell.setDescription(lb: description, controller: self)
+        if searchFlag {
+            let item = searchItems[indexPath.item]
+            let name = item.name
+            cell.setName(lb: name, controller: self)
+            let description = item.description
+            cell.setDescription(lb: description, controller: self)
+        } else {
+            let item = items[indexPath.item]
+            let name = item.name
+            cell.setName(lb: name, controller: self)
+            let description = item.description
+            cell.setDescription(lb: description, controller: self)
+        }
         return cell
     }
 
