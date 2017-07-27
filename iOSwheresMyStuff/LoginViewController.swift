@@ -78,16 +78,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            let user = Auth.auth().currentUser;
-            var userName: String = self.usernameTextField.text!
-            var url: UIImage = UIImage(named: "UserDefualt")!
             
-            if (user != nil) {
-                userName = (user?.displayName!)!
-                if let imageData: NSData = NSData(contentsOf: (user?.photoURL)! as URL) {
-                    url = UIImage(data: imageData as Data)!
-                }
-            }
+            let url: UIImage = UIImage(named: "UserDefault")!
+            let delimiter = "@"
+            let newstr = self.usernameTextField.text!
+            var token = newstr.components(separatedBy: delimiter)
+            let userName = token[0]
+            
             
             
             Model.sharedModel.userManager.currentUser = User(password: self.passwordTextField.text!, email: self.usernameTextField.text!, name: userName, photo: url)

@@ -177,17 +177,8 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserDefault" translatesAutoresizingMaskIntoConstraints="NO" id="BCB-di-hB3">
-                                <rect key="frame" x="123" y="311" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEs-nr-wR1">
-                                <rect key="frame" x="86" y="447" width="219" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set Profile Picture" backgroundImage="GButton"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3m-g7-8GT">
-                                <rect key="frame" x="86" y="485" width="219" height="29"/>
+                                <rect key="frame" x="83" y="319" width="219" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="  Register  " backgroundImage="GButton">
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -203,6 +194,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="3if-kH-tuP" id="dRm-bt-YdD"/>
                         <outlet property="emailTextField" destination="hlw-Jp-Nwz" id="pIf-rc-Wfj"/>
+                        <outlet property="nameTextField" destination="VYH-fn-kqD" id="ozc-xt-9JM"/>
                         <outlet property="passwordLabel" destination="DKo-hs-PBT" id="UQu-5O-ds7"/>
                         <outlet property="passwordTextField" destination="Zbd-4O-nju" id="kTY-s7-QmZ"/>
                     </connections>
@@ -1069,7 +1061,6 @@
         <image name="MapIcon" width="25" height="25"/>
         <image name="Refresh" width="25" height="25"/>
         <image name="Register" width="25" height="25"/>
-        <image name="UserDefault" width="96" height="96"/>
         <image name="UserPage" width="24" height="24"/>
         <image name="check" width="24" height="24"/>
         <image name="ex" width="24" height="24"/>
