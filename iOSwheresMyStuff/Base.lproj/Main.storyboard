@@ -462,7 +462,7 @@
             <objects>
                 <navigationController id="cc6-AE-y0l" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add Item" image="AddItem" id="z3Z-vF-lZ2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fCB-5g-KZS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fCB-5g-KZS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -927,27 +927,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="irC-Fi-AUo">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZL-Ol-ksW">
+                                <rect key="frame" x="143" y="585" width="88" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="Refresh:" destination="Rs6-Ca-Bf9" eventType="touchUpInside" id="N76-RV-wyM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="ofd-zl-tA2"/>
                     <connections>
                         <outlet property="mainMap" destination="irC-Fi-AUo" id="r3c-oh-Kfp"/>
+                        <outlet property="refreshButton" destination="dZL-Ol-ksW" id="Ico-zQ-WoW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBz-iE-AUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2866" y="-163"/>
+            <point key="canvasLocation" x="2864.8000000000002" y="-163.26836581709148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8XY-PE-x48">
             <objects>
                 <navigationController storyboardIdentifier="Navigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BVB-UK-xDV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4N-ll-hK3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="g4N-ll-hK3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

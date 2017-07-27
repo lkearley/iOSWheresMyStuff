@@ -25,6 +25,7 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
             
             if snapshot.childrenCount > 0 {
                 self.items.removeAll()
+                Model.sharedModel.itemManager.foundItems.removeAll()
                 
                 //iterating through all the values
                 for item in snapshot.children.allObjects as! [DataSnapshot] {

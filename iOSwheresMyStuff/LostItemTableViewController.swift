@@ -27,6 +27,7 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
             
             if snapshot.childrenCount > 0 {
                 self.items.removeAll()
+                Model.sharedModel.itemManager.lostItems.removeAll()
                 
                 //iterating through all the values
                 for item in snapshot.children.allObjects as! [DataSnapshot] {
