@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 import MapKit
 import MessageUI
 
@@ -19,10 +20,11 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
     @IBOutlet weak var itemRewardLabel: UILabel!
     @IBOutlet weak var itemDescriptionLabel: UILabel!
     
+    var item: LostItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let item = Model.sharedModel.itemManager.selectedLostItem
+        item = Model.sharedModel.itemManager.selectedLostItem!
         itemNameLabel.text = item?.name
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MMM-yyyy"
@@ -31,7 +33,7 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
         itemDescriptionLabel.text = item?.description
         let location: MKPointAnnotation = item!.location
         lostMap.addAnnotation(location as MKAnnotation)
-        itemRewardLabel.text = "$" + "\(item?.reward ?? 0)"
+        itemRewardLabel.text = "$" + "\(String(describing: item?.reward))"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -47,6 +49,11 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        
+    }
+    
+    @IBAction func back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
         
     }
     

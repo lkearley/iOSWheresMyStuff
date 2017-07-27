@@ -13,11 +13,13 @@ import FirebaseDatabase
 
 class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource {
 
-    
+    var searchFlag: Bool = false
     var items: [FoundItem] = [FoundItem]()
+    var searchItems: [FoundItem] = [FoundItem]()
     //MARK:Properties
     @IBOutlet weak var foundSearch: UISearchBar!
     @IBOutlet weak var foundTable: UITableView!
+    
 
     override func viewDidLoad() {
         let ref = Database.database().reference(withPath: "found-items")
@@ -62,9 +64,22 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
         foundTable.delegate = self
         foundSearch.delegate = self
         foundTable.dataSource = self
+        
+        foundTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if foundSearch == nil || foundSearch.text == "" {
+            searchFlag = false
+            foundTable.reloadData()
+        } else {
+            searchFlag = true
+            searchItems = items.filter({$0.name.contains(foundSearch.text!)})
+            foundTable.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +88,24 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchFlag {
+            return searchItems.count
+        }
         return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        Model.sharedModel.itemManager.selectedFoundItem = item
+        self.performSegue(withIdentifier: "showItemDetails", sender: indexPath.row)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! FoundItemPageViewController
+        let row = sender as! Int
+        let item = items[row]
+        dest.item = item
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,17 +119,7 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
         return cell
         
     }
-    
-    
-   
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = items[indexPath.item]
-        Model.sharedModel.itemManager.selectedFoundItem = item
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FoundItemPage")
-        self.present(vc!, animated: true, completion: nil)
-        
-    }
-    
+
     
     
 

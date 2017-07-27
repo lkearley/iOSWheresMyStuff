@@ -23,6 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var facebookLoginButton: UIButton!
     
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "texture")!)
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self

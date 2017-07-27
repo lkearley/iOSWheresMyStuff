@@ -18,6 +18,9 @@ class FoundItemPageViewController: UIViewController, MFMailComposeViewController
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemDescription: UILabel!
     
+    
+    var item: FoundItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let item = Model.sharedModel.itemManager.selectedFoundItem

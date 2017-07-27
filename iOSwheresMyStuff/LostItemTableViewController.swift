@@ -17,9 +17,13 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     
     
     var items: [LostItem] = [LostItem]()
+    var searchItems: [LostItem] = [LostItem]()
+    var searchFlag: Bool = false
+    
     //MARK: Properites
-    @IBOutlet weak var itemSearch: UISearchBar!
+    
     @IBOutlet weak var itemTable: UITableView!
+    @IBOutlet weak var itemSearch: UISearchBar!
     
     override func viewDidLoad() {
         let ref = Database.database().reference(withPath: "lost-items")
@@ -76,6 +80,9 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchFlag {
+            return searchItems.count
+        }
         return items.count
     }
     
@@ -92,9 +99,31 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.item]
         Model.sharedModel.itemManager.selectedLostItem = item
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LostItemPage")
-        self.present(vc!, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "itemDetails", sender: indexPath.row)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! LostItemPageViewController
+        let row = sender as! Int
+        let item = items[row]
+        dest.item = item
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if itemSearch == nil || itemSearch.text == "" {
+            searchFlag = false
+            itemTable.reloadData()
+        } else {
+            searchFlag = true
+            searchItems = items.filter({$0.name.contains(itemSearch.text!)})
+            itemTable.reloadData()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewDidLoad()
     }
     /*
     // MARK: - Navigation

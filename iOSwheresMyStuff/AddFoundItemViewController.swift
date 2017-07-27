@@ -25,6 +25,7 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
     override func viewDidLoad() {
         super.viewDidLoad()
         refs = Database.database().reference(withPath: "found-items")
+        
         let longTouch = UILongPressGestureRecognizer(target: self, action: #selector(self.addPin))
         longTouch.minimumPressDuration = 1
         longTouch.delegate = self
