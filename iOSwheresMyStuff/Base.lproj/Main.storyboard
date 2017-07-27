@@ -710,7 +710,7 @@
         <!--Lost Item Table View Controller-->
         <scene sceneID="6c0-6a-1o4">
             <objects>
-                <viewController storyboardIdentifier="LostItemsList" id="xLg-Km-266" customClass="LostItemTableViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LostItemsList" automaticallyAdjustsScrollViewInsets="NO" id="xLg-Km-266" customClass="LostItemTableViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y25-si-N5b"/>
                         <viewControllerLayoutGuide type="bottom" id="C0g-FJ-X9b"/>
@@ -787,7 +787,7 @@
         <!--Found Item Table View Controller-->
         <scene sceneID="D1K-Ve-8Gs">
             <objects>
-                <viewController id="7bj-aL-OvR" customClass="FoundItemTableViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7bj-aL-OvR" customClass="FoundItemTableViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kbE-JA-86y"/>
                         <viewControllerLayoutGuide type="bottom" id="03t-hh-vMi"/>
