@@ -33,7 +33,7 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
         itemDescriptionLabel.text = item?.description
         let location: MKPointAnnotation = item!.location
         lostMap.addAnnotation(location as MKAnnotation)
-        itemRewardLabel.text = "$" + "\(String(describing: item?.reward))"
+        itemRewardLabel.text = "$" + "\(item!.reward)"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
