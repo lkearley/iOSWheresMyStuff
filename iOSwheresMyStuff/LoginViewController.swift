@@ -13,6 +13,7 @@ import FacebookLogin
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Properties
@@ -21,6 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "texture")!)
@@ -35,6 +37,37 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Actions
+    @IBAction func forgotPass(_ sender: UIButton) {
+        var email = ""
+        let alertController = UIAlertController(title: "Recover Password", message: "please enter account email", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Send Password", style: .default, handler: {
+            alert -> Void in
+            
+            let emailTextField = alertController.textFields![0] as UITextField
+            email = emailTextField.text!
+            
+        })
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter email"
+        }
+        alertController.addAction(saveAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+        if email != "" {
+            Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+                if let error = error {
+                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                
+            }
+            
+            
+        }
+    }
     
     @IBAction func attemptLogin(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: self.usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
@@ -109,7 +142,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
-    
+
     
     
 
