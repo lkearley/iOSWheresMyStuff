@@ -41,9 +41,11 @@ class RegistrationViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
-            self.present(vc!, animated: true, completion: nil)
         }
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+        
     }
     
     
