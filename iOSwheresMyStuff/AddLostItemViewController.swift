@@ -106,6 +106,7 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
         
     }
     
+    //MARK: Functions
     func addPin(longTouch: UILongPressGestureRecognizer) -> Bool {
         let touchPoint = longTouch.location(in: lastKnownLocationMap)
         let pinCoordinates = lastKnownLocationMap.convert(touchPoint, toCoordinateFrom: lastKnownLocationMap)
