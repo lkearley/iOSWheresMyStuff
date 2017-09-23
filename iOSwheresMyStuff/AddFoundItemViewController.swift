@@ -27,9 +27,11 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         refs = Database.database().reference(withPath: "found-items")
         
         let longTouch = UILongPressGestureRecognizer(target: self, action: #selector(self.addPin))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AddLostItemViewController.dismissKeyboard))
         longTouch.minimumPressDuration = 1
         longTouch.delegate = self
         foundMapView.addGestureRecognizer(longTouch)
+        view.addGestureRecognizer(tap)
 
         
 
@@ -98,6 +100,10 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         foundMapView.addAnnotation(itemPin!)
         return true
         
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     /*

@@ -37,9 +37,11 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
         ref = Database.database().reference(withPath: "lost-items")
         
         let longTouch = UILongPressGestureRecognizer(target: self, action: #selector(self.addPin))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AddLostItemViewController.dismissKeyboard))
         longTouch.minimumPressDuration = 1
         longTouch.delegate = self
         lastKnownLocationMap.addGestureRecognizer(longTouch)
+        view.addGestureRecognizer(tap)
         
         
         // Do any additional setup after loading the view.
@@ -112,6 +114,10 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
         lastKnownLocationMap.addAnnotation(itemPin!)
         return true
         
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 
