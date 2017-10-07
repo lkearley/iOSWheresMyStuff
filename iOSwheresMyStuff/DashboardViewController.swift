@@ -17,7 +17,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var profilePicImage: UIImageView!
 
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "texture")!)
         super.viewDidLoad()
         namePlaceholderText.text = Model.sharedModel.userManager.currentUser.name
         profilePicImage.image = Model.sharedModel.userManager.currentUser.photo

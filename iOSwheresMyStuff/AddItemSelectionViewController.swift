@@ -11,7 +11,6 @@ import UIKit
 class AddItemSelectionViewController: UIViewController {
 
     override func viewDidLoad() {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "texture")!)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

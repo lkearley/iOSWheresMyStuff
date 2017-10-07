@@ -102,10 +102,12 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! FoundItemPageViewController
-        let row = sender as! Int
-        let item = items[row]
-        dest.item = item
+        if (segue.identifier == "showItemDetails") {
+            let dest = segue.destination as! FoundItemPageViewController
+            let row = sender as! Int
+            let item = items[row]
+            dest.item = item
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,18 +130,7 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
         
     }
 
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

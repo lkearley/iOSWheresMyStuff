@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey("AIzaSyBjGFbL0xVLbt6sFNoZG2fNpUW8M5ygKXE")
         // Override point for customization after application launch.
         UITabBar.appearance().tintColor = UIColor(red:0.20, green:0.20, blue:0.00, alpha:1.0)
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 153.0/255.0, green:255.0/255.0, blue:153.0/255.0, alpha:1.0)
+
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

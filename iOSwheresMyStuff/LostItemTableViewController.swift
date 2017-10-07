@@ -113,10 +113,12 @@ class LostItemTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! LostItemPageViewController
-        let row = sender as! Int
-        let item = items[row]
-        dest.item = item
+        if (segue.identifier == "itemDetails") {
+            let dest = segue.destination as! LostItemPageViewController
+            let row = sender as! Int
+            let item = items[row]
+            dest.item = item
+        }
     }
     
     

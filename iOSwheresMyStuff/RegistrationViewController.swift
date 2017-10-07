@@ -22,6 +22,8 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "texture")!)
         super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(RegistrationViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
     }
@@ -46,6 +48,10 @@ class RegistrationViewController: UIViewController {
             navController.popViewController(animated: true)
         }
         
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     

@@ -29,6 +29,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,7 +141,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
-
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     
 
