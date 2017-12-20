@@ -74,21 +74,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func attemptLogin(_ sender: UIButton) {
         Auth.auth().signIn(withEmail: self.usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
             if let error = error {
-                let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
+                Model.sharedModel.errorMessage(title: "Error", description: error.localizedDescription, action: "Okay", view: self)
                 return
             }
-            
             let url: UIImage = UIImage(named: "UserDefault")!
             let delimiter = "@"
             let newstr = self.usernameTextField.text!
             var token = newstr.components(separatedBy: delimiter)
             let userName = token[0]
-            
-            
-            
+
             Model.sharedModel.userManager.currentUser = User(password: self.passwordTextField.text!, email: self.usernameTextField.text!, name: userName, photo: url)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Tab")
             self.present(vc!, animated: true, completion: nil)
@@ -99,10 +93,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let fbLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if let error = error {
-                let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
+                Model.sharedModel.errorMessage(title: "Error", description: error.localizedDescription, action: "Okay", view: self)
                 return
             }
             
@@ -114,10 +105,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if let error = error {
-                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    Model.sharedModel.errorMessage(title: "Error", description: error.localizedDescription, action: "Okay", view: self)
                     return
                 }
                 let user = Auth.auth().currentUser;
@@ -147,15 +135,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

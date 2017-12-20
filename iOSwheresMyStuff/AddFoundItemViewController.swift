@@ -45,10 +45,7 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
     
     @IBAction func addItem(_ sender: UIButton) {
         if nameTextField.text == "" || descriptionTextField.text == "" || itemPin == nil {
-            let alertController = UIAlertController(title: "Error", message: "Please enter valid information for all fields", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            Model.sharedModel.errorMessage(title: "Error", description: "Please enter valid information for all fields", action: "Okay", view: self)
             return
         }
         itemPin?.title = nameTextField.text!
@@ -59,10 +56,7 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         let flag: Bool = Model.sharedModel.itemManager.addFoundItem(item: newItem)
         
         if !flag {
-            let alertController = UIAlertController(title: "Error", message: "Error adding item, please try again", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            Model.sharedModel.errorMessage(title: "Error", description: "There was a problem adding your item, please try again", action: "Okay", view: self)
             return
         } else {
             let coordinate: CLLocationCoordinate2D = (itemPin?.coordinate)!
@@ -72,7 +66,6 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
             formatter.dateFormat = "dd-MMM-yyyy"
             let dateString = formatter.string(from: (newItem.date))
             let key = refs.childByAutoId().key
-            print("Im still here")
             
             let item = ["name": nameTextField.text! as String,
                         "description": descriptionTextField.text! as String,
@@ -84,11 +77,8 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
                         ]
             
             refs.child(key).setValue(item)
-            let alertController = UIAlertController(title: "Success", message: "Item Added", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
-            
+            //TODO: Change this
+            Model.sharedModel.errorMessage(title: "Success", description: "Item Added", action: "Okay", view: self)
         }
     }
     
@@ -106,14 +96,5 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         view.endEditing(true)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

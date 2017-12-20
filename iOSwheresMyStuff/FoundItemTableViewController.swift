@@ -16,11 +16,11 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
     var searchFlag: Bool = false
     var items: [FoundItem] = [FoundItem]()
     var searchItems: [FoundItem] = [FoundItem]()
+    
     //MARK:Properties
     @IBOutlet weak var foundSearch: UISearchBar!
     @IBOutlet weak var foundTable: UITableView!
     
-
     override func viewDidLoad() {
         let ref = Database.database().reference(withPath: "found-items")
         ref.observe(DataEventType.value, with: { (snapshot) in
@@ -68,7 +68,6 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
         foundTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -130,8 +129,6 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
         
     }
 
-
-
 }
 
 class ItemCell: UITableViewCell {
@@ -140,10 +137,8 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var nameCellLabel: UILabel!
     @IBOutlet weak var descriptionCellLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

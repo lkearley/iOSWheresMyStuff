@@ -56,10 +56,7 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
     //MARK: Actions
     @IBAction func onAddItemPressed(_ sender: UIButton) {
         if itemNameTextField.text! == "" || descriptionItemTextField.text! == "" || Int(rewardTextField.text!) == nil || itemPin == nil {
-            let alertController = UIAlertController(title: "Error", message: "Please enter valid information for all fields", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            Model.sharedModel.errorMessage(title: "Error", description: "Please enter valid information for all fields", action: "Okay", view: self)
             return
         }
         itemPin?.title = itemNameTextField.text!
@@ -70,10 +67,7 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
         let flag: Bool = Model.sharedModel.itemManager.addLostItem(item: newItem)
         
         if !flag {
-            let alertController = UIAlertController(title: "Error", message: "Error adding item, please try again", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            Model.sharedModel.errorMessage(title: "Error", description: "There was a problem adding your item, please try again", action: "Okay", view: self)
             return
         } else {
             let coordinate: CLLocationCoordinate2D = (itemPin?.coordinate)!
@@ -95,12 +89,9 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
             ] as [String : Any]
             
             ref.child(key).setValue(item)
-        
             
-            let alertController = UIAlertController(title: "Success", message: "Item Added", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            //TODO: Change UI flow, get rid of the messsage and go back to list
+            Model.sharedModel.errorMessage(title: "Success", description: "Item Added", action: "Okay", view: self)
             
         }
         
@@ -120,19 +111,5 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
     func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

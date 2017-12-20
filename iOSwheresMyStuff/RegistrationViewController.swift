@@ -37,10 +37,7 @@ class RegistrationViewController: UIViewController {
     @IBAction func registrationButtonPressed(_ sender: UIButton) {
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
             if let error = error {
-                let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                self.present(alertController, animated: true, completion: nil)
+                Model.sharedModel.errorMessage(title: "Error", description: error.localizedDescription, action: "Okay", view: self)
                 return
             }
         }
@@ -54,16 +51,5 @@ class RegistrationViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

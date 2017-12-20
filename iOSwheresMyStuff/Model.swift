@@ -7,17 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
-class Model {
+final class Model {
     
     static let sharedModel: Model = Model()
     
     var itemManager: ItemManager
     var userManager: UserManager
     
-    init() {
+    private init() {
         self.itemManager = ItemManager()
         self.userManager = UserManager()
+    }
+    
+    func errorMessage(title: String, description: String, action: String, view: UIViewController) {
+        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: action, style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        view.present(alertController, animated: true, completion: nil)
     }
     
 }

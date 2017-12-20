@@ -43,10 +43,7 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
         if MFMailComposeViewController.canSendMail() {
             self.present(mailComposeViewController, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: "Error", message: "There was a problem sending your email", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            Model.sharedModel.errorMessage(title: "Error", description: "There was a problem sending your email, please try again", action: "Okay", view: self)
             return
         }
         
@@ -75,16 +72,5 @@ class LostItemPageViewController: UIViewController, MFMailComposeViewControllerD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

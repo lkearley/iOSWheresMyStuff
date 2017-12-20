@@ -21,7 +21,6 @@ class DashboardViewController: UIViewController {
         namePlaceholderText.text = Model.sharedModel.userManager.currentUser.name
         profilePicImage.image = Model.sharedModel.userManager.currentUser.photo
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +34,7 @@ class DashboardViewController: UIViewController {
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
-            let alertController = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            Model.sharedModel.errorMessage(title: "Error", description: signOutError.localizedDescription, action: "Okay", view: self)
             return
         }
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Navigation")
@@ -46,14 +42,5 @@ class DashboardViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
