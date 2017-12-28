@@ -26,6 +26,8 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.24.0):
     - FBSDKCoreKit
+  - Firebase (4.0.3):
+    - Firebase/Core (= 4.0.3)
   - Firebase/Auth (4.0.3):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -73,6 +75,7 @@ DEPENDENCIES:
   - FacebookLogin
   - FacebookShare
   - FBSDKPlacesKit
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -99,6 +102,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
 
-PODFILE CHECKSUM: 8a71117a0f5d0af09bae18dfe76a548c5f771505
+PODFILE CHECKSUM: 2715d169259b9422b563ca8cb6901c032bbaaa7b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

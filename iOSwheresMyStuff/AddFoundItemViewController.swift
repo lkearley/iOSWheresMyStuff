@@ -33,9 +33,6 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
         foundMapView.addGestureRecognizer(longTouch)
         view.addGestureRecognizer(tap)
 
-        
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

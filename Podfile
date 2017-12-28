@@ -19,5 +19,6 @@ end
 
 target 'iOSwheresMyStuffTests' do
     inherit! :search_paths
+    pod 'Firebase'
     # Pods for testing
 end
