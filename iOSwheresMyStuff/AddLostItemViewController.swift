@@ -91,8 +91,10 @@ class AddLostItemViewController: UIViewController, UIPickerViewDelegate, MKMapVi
             ref.child(key).setValue(item)
             
             //TODO: Change UI flow, get rid of the messsage and go back to list
-            Model.sharedModel.errorMessage(title: "Success", description: "Item Added", action: "Okay", view: self)
-            
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
+            //Model.sharedModel.errorMessage(title: "Success", description: "Item Added", action: "Okay", view: self)
         }
         
     }

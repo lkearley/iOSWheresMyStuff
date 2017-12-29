@@ -25,7 +25,6 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
     override func viewDidLoad() {
         super.viewDidLoad()
         refs = Database.database().reference(withPath: "found-items")
-        
         let longTouch = UILongPressGestureRecognizer(target: self, action: #selector(self.addPin))
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddLostItemViewController.dismissKeyboard))
         longTouch.minimumPressDuration = 1
@@ -75,7 +74,10 @@ class AddFoundItemViewController: UIViewController, MKMapViewDelegate, UIGesture
             
             refs.child(key).setValue(item)
             //TODO: Change this
-            Model.sharedModel.errorMessage(title: "Success", description: "Item Added", action: "Okay", view: self)
+            //Model.sharedModel.errorMessage(title: "Success", description: "Item Added", action: "Okay", view: self)
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
         }
     }
     

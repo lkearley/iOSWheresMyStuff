@@ -70,6 +70,10 @@ class FoundItemTableViewController: UIViewController, UITableViewDelegate, UISea
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        viewDidLoad()
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if foundSearch == nil || foundSearch.text == "" {
             searchFlag = false

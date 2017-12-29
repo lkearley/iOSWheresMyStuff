@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BVB-UK-xDV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BVB-UK-xDV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -206,7 +206,6 @@
                     <connections>
                         <segue destination="Kof-63-xQq" kind="relationship" relationship="viewControllers" id="xQD-kF-WMb"/>
                         <segue destination="Rs6-Ca-Bf9" kind="relationship" relationship="viewControllers" id="rfb-0Q-TDL"/>
-                        <segue destination="cc6-AE-y0l" kind="relationship" relationship="viewControllers" id="Cpi-Up-t9o"/>
                         <segue destination="3n0-kG-APW" kind="relationship" relationship="viewControllers" id="a0p-xC-a3i"/>
                         <segue destination="aMk-8y-U99" kind="relationship" relationship="viewControllers" id="byc-Uu-kJ5"/>
                     </connections>
@@ -339,9 +338,6 @@
                                 <state key="normal" title="  Cancel  " image="ex" backgroundImage="GButton">
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="h0n-g5-CF8" kind="show" id="7qa-Ym-GXA"/>
-                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tWQ-aR-guJ">
                                 <rect key="frame" x="16" y="382" width="343" height="126"/>
@@ -372,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1n-zt-H9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6917.6000000000004" y="-2006.4467766116943"/>
+            <point key="canvasLocation" x="8049" y="-675"/>
         </scene>
         <!--Add Lost Item-->
         <scene sceneID="0Oj-eE-C7J">
@@ -456,9 +452,6 @@
                                 <state key="normal" title="  Cancel  " image="ex" backgroundImage="GButton">
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="h0n-g5-CF8" kind="show" id="iLn-Ri-HrT"/>
-                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="una-M4-p2g">
                                 <rect key="frame" x="16" y="411" width="343" height="126"/>
@@ -497,68 +490,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qP0-SJ-cWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="9MY-W8-yJi"/>
             </objects>
-            <point key="canvasLocation" x="6454" y="-795"/>
-        </scene>
-        <!--Add Item-->
-        <scene sceneID="Dd2-xR-oEd">
-            <objects>
-                <navigationController id="cc6-AE-y0l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add Item" image="AddItem" id="z3Z-vF-lZ2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="fCB-5g-KZS">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="h0n-g5-CF8" kind="relationship" relationship="rootViewController" id="LbV-qX-4Eb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B4A-Qx-EdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4255" y="-1218"/>
-        </scene>
-        <!--Add Item-->
-        <scene sceneID="CsV-K1-jxh">
-            <objects>
-                <viewController storyboardIdentifier="AddItemPicker" id="h0n-g5-CF8" customClass="AddItemSelectionViewController" customModule="iOSwheresMyStuff" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xuu-Ro-3fv"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZDS-Zz-bcT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1ji-3j-MO4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgY-GO-JyH">
-                                <rect key="frame" x="63" y="211" width="249" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
-                                <state key="normal" title="  Lost Item  " backgroundImage="GButton">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="EgR-xj-1id" kind="show" id="F7Y-79-uht"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3P-WX-9LC">
-                                <rect key="frame" x="63" y="406" width="249" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
-                                <state key="normal" title="  Found Item  " backgroundImage="GButton">
-                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vYp-Ft-amJ" kind="show" id="cXe-Ip-5vv"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="xa7-Zw-ibb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ko-fw-hbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5469.6000000000004" y="-1218.440779610195"/>
+            <point key="canvasLocation" x="6346" y="474"/>
         </scene>
         <!--Lost Item Page View Controller-->
         <scene sceneID="bAz-lj-DRg">
@@ -627,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="36y-km-Ebb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6176.8000000000002" y="846.9265367316342"/>
+            <point key="canvasLocation" x="7298" y="862"/>
         </scene>
         <!--Lost Item List-->
         <scene sceneID="6c0-6a-1o4">
@@ -943,7 +875,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SIh-nW-EFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5774" y="-22"/>
+            <point key="canvasLocation" x="5454" y="-241"/>
         </scene>
     </scenes>
     <resources>
@@ -962,10 +894,5 @@
         <image name="email" width="32" height="32"/>
         <image name="ex" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="7qa-Ym-GXA"/>
-        <segue reference="92U-cH-saE"/>
-        <segue reference="xXG-wU-2Eb"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
